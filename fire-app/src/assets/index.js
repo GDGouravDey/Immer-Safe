@@ -34,6 +34,7 @@ import electrical_safety from "./electrical_safety.png";
 import emergency from "./emergency.jpg";
 import fireguard from "./fireguard.png";
 import logo2 from "./logo.png";
+import bullet from "./bullet.svg";
 
 export {
   airbnb,
@@ -72,4 +73,5 @@ export {
   emergency,
   fireguard,
   logo2,
+  bullet,
 };

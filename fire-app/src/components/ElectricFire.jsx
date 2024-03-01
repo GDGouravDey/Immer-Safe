@@ -2,12 +2,13 @@ import { electricaltips } from "../constants";
 import styles from "../style";
 import { electrical_safety } from "../assets";
 import { layout } from "../style";
+import { bullet } from "../assets";
 
 const FeatureCard = ({ icon, title, content, index }) => (
     <div className={`flex flex-row p-4 rounded-[20px] feature-card`}>
-        {/* <div className={`w-[64px] h-[64px] rounded-full ${styles.flexCenter} bg-dimBlue`}>
-        <img src={icon} alt="star" className="w-[50%] h-[50%] object-contain" />
-      </div> */}
+        <div className={`w-[40px] h-[40px] -mt-2 rounded-full ${styles.flexCenter}`}>
+            <img src={bullet} alt="bullet" className="w-[50%] h-[50%] object-contain" />
+        </div>
         <div className="flex-1 flex flex-col">
             <h4 className="font-poppins font-semibold text-white text-[19px] leading-[23.4px] mb-1">
                 {title}
@@ -20,7 +21,7 @@ const ElectricFire = () => {
     return (
         <>
             <section className={`${layout.section2} relative`}>
-            <div className="absolute z-[0] w-[60%] h-[60%] -right-[50%] rounded-full orange__gradient bottom-40" />
+                <div className="absolute z-[0] w-[60%] h-[60%] -right-[50%] rounded-full orange__gradient bottom-40" />
                 <div className={`${layout.sectionImg} md:ml-7`}>
                     <img src={electrical_safety} alt="electrical_safety" className="w-[100%] h-[80%] relative z-[5] ml-1 mb-12 pr-5 rounded-[3.5rem]" />
                 </div>

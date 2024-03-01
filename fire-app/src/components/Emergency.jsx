@@ -2,12 +2,13 @@ import { emergencytips } from "../constants";
 import styles from "../style";
 import { emergency } from "../assets";
 import { layout } from "../style";
+import { bullet } from "../assets";
 
 const FeatureCard = ({ icon, title, content, index }) => (
     <div className={`flex flex-row p-4 rounded-[20px] feature-card`}>
-        {/* <div className={`w-[64px] h-[64px] rounded-full ${styles.flexCenter} bg-dimBlue`}>
-        <img src={icon} alt="star" className="w-[50%] h-[50%] object-contain" />
-      </div> */}
+        <div className={`w-[40px] h-[40px] -mt-2 rounded-full ${styles.flexCenter}`}>
+            <img src={bullet} alt="bullet" className="w-[50%] h-[50%] object-contain" />
+        </div>
         <div className="flex-1 flex flex-col">
             <h4 className="font-poppins font-semibold text-white text-[19px] leading-[23.4px] mb-1">
                 {title}
@@ -20,7 +21,7 @@ const Emergency = () => {
     return (
         <>
             <section className={`${layout.section2} relative`}>
-            <div className="absolute z-[0] w-[60%] h-[60%] right-[90%] rounded-full pink__gradient bottom-40" />
+                <div className="absolute z-[0] w-[60%] h-[60%] right-[90%] rounded-full pink__gradient bottom-40" />
                 <div className={layout.sectionInfo}>
                     <h2 className={`${styles.heading2} flex justify-center items-center mb-[-40px]`}>Emergency Tips</h2>
                     <section id="emergencytips" className={layout.section}>
