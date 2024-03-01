@@ -4,7 +4,6 @@ import Home from './pages/Home';
 import Notification from './pages/Notification';
 import Tips from './pages/Tips';
 import About from './pages/About';
-import Navbar from './components/Navbar';
 
 const App = () => {
   return (

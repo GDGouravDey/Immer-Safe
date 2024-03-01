@@ -16,11 +16,11 @@ const Notif = () => {
             </div>
 
             <div className="mt-4">
-              <div className="bg-red-700 text-white p-5 rounded-[20px] shadow-lg mb-6">
+              <div className="bg-red-700 text-white p-5 rounded-[20px] shadow-lg mb-6 cursor-pointer">
                 <h2 className="text-2xl font-bold mb-2">Possible Fire in Kitchen Area</h2>
                 <p className="text-lg">Smoke and High Temperatures Detected.</p>
               </div>
-              <div className="bg-red-700 text-white p-5 rounded-[20px] shadow-lg mb-6">
+              <div className="bg-red-700 text-white p-5 rounded-[20px] shadow-lg mb-6 cursor-pointer">
                 <h2 className="text-2xl font-bold mb-2">Possible Fire in Living Room</h2>
                 <p className="text-lg">High Temperatures Detected.</p>
               </div>

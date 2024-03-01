@@ -25,12 +25,12 @@ const Navbar = () => {
 
         <div
           className={`${!toggle ? "hidden" : "flex"
-            } p-6 bg-black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar`}
+            } p-7 bg-black-gradient absolute top-[5.2rem] right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar`}
         >
           <ul className="list-none flex justify-end items-start flex-1 flex-col">
-            <li className="font-poppins font-normal cursor-pointer text-[18px] text-white mr-10"><Link to="/">Home</Link></li>
-            <li className="font-poppins font-normal cursor-pointer text-[18px] text-white mr-10"><Link to="/notifications">Notifications</Link></li>
-            <li className="font-poppins font-normal cursor-pointer text-[18px] text-white mr-10"><Link to="/tips">Safety Tips</Link></li>
+            <li className="font-poppins font-normal cursor-pointer text-[18px] text-white mr-10 mb-1.5"><Link to="/">Home</Link></li>
+            <li className="font-poppins font-normal cursor-pointer text-[18px] text-white mr-10 mb-1.5"><Link to="/notifications">Notifications</Link></li>
+            <li className="font-poppins font-normal cursor-pointer text-[18px] text-white mr-10 mb-1.5"><Link to="/tips">Safety Tips</Link></li>
             <li className="font-poppins font-normal cursor-pointer text-[18px] text-white mr-10"><Link to="/about">About Us</Link></li>
           </ul>
         </div>
