@@ -5,7 +5,7 @@ const Pic1 = () => (
   <section className={`${layout.section} flex-col relative`}>
     <div className="absolute z-[0] w-[60%] h-[80%] -left-[65%] rounded-full pink__gradient bottom-40" />
     <div className={layout.sectionInfo}>
-      <h2 className={styles.heading2}>
+      <h2 className={`${styles.heading2} lg:text-[55px]`}>
         Get immediate notification <br className="sm:block hidden" /> in case of emergency.
       </h2>
       <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
