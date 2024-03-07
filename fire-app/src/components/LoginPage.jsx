@@ -28,10 +28,10 @@ const LoginPage = () => {
                             <img src={google_auth} alt="Google" className="relative h-[94%] z-[5]" />
                         </div>
                         <span className={`span mb-1`}>{isSignUp ? 'or use your email for registration' : 'or use your email password'}</span>
-                        {isSignUp && <input type="text" placeholder="Name" className={`input`} />}
-                        <input type="email" placeholder="Email" className={`input`} />
-                        <input type="password" placeholder="Password" className={`input`} />
-                        {isSignUp && <input type="number" placeholder="Phone Number" className={`input`} />}
+                        {isSignUp && <input type="text" placeholder="Name" id="name" className={`input`} />}
+                        <input type="email" placeholder="Email" id="email" className={`input`} />
+                        <input type="password" placeholder="Password" id="password" className={`input`} />
+                        {isSignUp && <input type="number" placeholder="Phone Number" id="number" className={`input`} />}
                         {isSignUp && <button className={`button`} id="signup">Sign Up</button>}
                         {!isSignUp && (
                             <>
