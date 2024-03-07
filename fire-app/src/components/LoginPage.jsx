@@ -31,6 +31,7 @@ const LoginPage = () => {
                         {isSignUp && <input type="text" placeholder="Name" className={`input`} />}
                         <input type="email" placeholder="Email" className={`input`} />
                         <input type="password" placeholder="Password" className={`input`} />
+                        {isSignUp && <input type="number" placeholder="Phone Number" className={`input`} />}
                         {isSignUp && <button className={`button`} id="signup">Sign Up</button>}
                         {!isSignUp && (
                             <>
