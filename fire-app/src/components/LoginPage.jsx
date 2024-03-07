@@ -31,11 +31,11 @@ const LoginPage = () => {
                         {isSignUp && <input type="text" placeholder="Name" className={`input`} />}
                         <input type="email" placeholder="Email" className={`input`} />
                         <input type="password" placeholder="Password" className={`input`} />
-                        {isSignUp && <button className={`button`}>Sign Up</button>}
+                        {isSignUp && <button className={`button`} id="signup">Sign Up</button>}
                         {!isSignUp && (
                             <>
                                 <a href="#" className={`text-xs text-gray-600 block mb-2 forgotPassword`}>Forget Your Password?</a>
-                                <button className={`btn-primary signInButton`}>Sign In</button>
+                                <button className={`btn-primary signInButton`} id="signin">Sign In</button>
                             </>
                         )}
                     </form>
@@ -50,7 +50,7 @@ const LoginPage = () => {
                         <div className={`toggle-panel toggle-left p-6 text-center togglePanel`}>
                             <h1 className={`text-3xl font-semibold mb-4 toggleHeading`} style={{ fontWeight: 700 }}>Welcome Back!</h1>
                             <p className={`text-sm mb-4 toggleText`}>Enter your personal details to use all site features</p>
-                            <button className={`button2`} id="logintemp" onClick={handleToggle}>Sign In</button>
+                            <button className={`button2`} id="signintemp" onClick={handleToggle}>Sign In</button>
                         </div>
                     </div>
                 </div>
