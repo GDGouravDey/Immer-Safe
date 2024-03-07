@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from '../style';
 import { Navbar, Footer } from '../components';
+import LoginPage from '../components/LoginPage';
 const About = () => {
   return (
     <>

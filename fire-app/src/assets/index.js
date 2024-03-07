@@ -35,6 +35,7 @@ import emergency from "./emergency.jpg";
 import fireguard from "./fireguard.png";
 import logo2 from "./logo.png";
 import bullet from "./bullet.svg";
+import google_auth from "./google_auth.svg";
 
 export {
   airbnb,
@@ -74,4 +75,5 @@ export {
   fireguard,
   logo2,
   bullet,
+  google_auth,
 };

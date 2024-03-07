@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Notification from './pages/Notification';
 import Tips from './pages/Tips';
 import About from './pages/About';
+import Signin from './pages/Signin';
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
         <Route path='/notifications' element={<Notification />} />
         <Route path='/tips' element={<Tips />} />
         <Route path='/about' element={<About />} />
+        <Route path='/signin' element={<Signin />} />
       </Routes>
     </>
   );
