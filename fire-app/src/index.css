@@ -185,7 +185,18 @@
     min-height: 480px;
 }
 
-.container p {
+.container2 {
+  background-color: #fff;
+  border-radius: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  position: relative;
+  overflow: hidden;
+  width: 768px;
+  /* max-width: 80%; */
+  min-height: 480px;
+}
+
+.container p, .container2 p {
     font-size: 14px;
     line-height: 20px;
     letter-spacing: 0.3px;
@@ -193,17 +204,21 @@
 }
 
 .container span {
-    font-size: 12px;
+  font-size: 12px;
 }
 
-.container a {
+.container2 span {
+    font-size: 13px;
+}
+
+.container a, .container2 a {
     color: #333;
     font-size: 13px;
     text-decoration: none;
     margin: 15px 0 10px;
 }
 
-.container button {
+.container button, .container2 button {
     background-color: #512da8;
     color: #fff;
     font-size: 12px;
@@ -217,7 +232,7 @@
     cursor: pointer;
 }
 
-.container button.hidden {
+.container button.hidden, .container2 button.hidden {
     background-color: transparent;
     border-color: #fff;
 }
@@ -232,6 +247,16 @@
     height: 100%;
 }
 
+.container2 form {
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 20px;
+    height: 100%;
+}
+
 .container input {
     background-color: #eee;
     border: none;
@@ -240,6 +265,17 @@
     font-size: 13px;
     border-radius: 8px;
     width: 100%;
+    outline: none;
+}
+
+.container2 input {
+    background-color: #eee;
+    border: none;
+    margin: 8px 0;
+    padding: 10px 15px;
+    font-size: 13px;
+    border-radius: 8px;
+    width: 120%;
     outline: none;
 }
 
@@ -314,7 +350,7 @@
     overflow: hidden;
     transition: all 0.6s ease-in-out;
     border-radius: 150px 0 0 100px;
-    z-index: 1000;
+    z-index: 40;
 }
 
 .container.active .toggle-container {
