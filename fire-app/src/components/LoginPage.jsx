@@ -1,9 +1,11 @@
 import React, { useRef, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { google_auth } from '../assets/index';
+import { useNavigate } from 'react-router-dom';
 
 const LoginPage = () => {
   const containerRef = useRef(null);
+  const navigate = useNavigate();
   const [isSignUp, setIsSignUp] = useState(false);
 
   const [username, setName] = useState();
@@ -44,6 +46,7 @@ const LoginPage = () => {
         document.cookie = `username=${responseData.username}; max-age=86400; path=/`;
         document.cookie = `email=${responseData.email}; max-age=86400; path=/`;
         document.cookie = `phone_num=${responseData.phone_num}; max-age=86400; path=/`;
+        navigate("/");
       } else {
         // Handle error response
         console.error('Registration failed:', response.statusText);
@@ -81,6 +84,7 @@ const LoginPage = () => {
         document.cookie = `username=${responseData.user.username}; max-age=86400; path=/`;
         document.cookie = `email=${responseData.user.email}; max-age=86400; path=/`;
         document.cookie = `phone_num=${responseData.phone_num}; max-age=86400; path=/`;
+        navigate("/");
       } else {
         // Handle error response
         console.error('Login failed:', response.statusText);
@@ -141,20 +145,20 @@ const LoginPage = () => {
               <img src={google_auth} alt="Google" className="relative h-[94%] z-[5]" />
             </div>
             <span className={`span mb-1`}>{isSignUp ? 'or use your email for registration' : 'or use your email password'}</span>
-            {isSignUp && <input type="text" placeholder="Name" id="username" className={`input z-10`} onChange={(e) => setName(e.target.value)} />}
-            <input type="email" placeholder="Email" id="email" className={`input z-10`} onChange={(e) => setEmail(e.target.value)} />
-            <input type="password" placeholder="Password" id="password" className={`input z-10`} onChange={(e) => setPassword(e.target.value)} />
+            {isSignUp && <input type="text" placeholder="Name" id="username_mob" className={`input z-10`} onChange={(e) => setName(e.target.value)} />}
+            <input type="email" placeholder="Email" id="email_mob" className={`input z-10`} onChange={(e) => setEmail(e.target.value)} />
+            <input type="password" placeholder="Password" id="password_mob" className={`input z-10`} onChange={(e) => setPassword(e.target.value)} />
             {isSignUp && (
               <>
-                <input type="number" placeholder="Phone Number" id="number" className={`input z-10`} onChange={(e) => setPhoneNum(e.target.value)} />
-                <button className={`btn-primary signInButton z-10`} type="submit" id="signup" onClick={handleSignUp}>Sign Up</button>
+                <input type="number" placeholder="Phone Number" id="number_mob" className={`input z-10`} onChange={(e) => setPhoneNum(e.target.value)} />
+                <button className={`btn-primary signInButton z-10`} type="submit" id="signup_mob" onClick={handleSignUp}>Sign Up</button>
                 <a href="#" className={`text-xs text-gray-600 block mb-2 forgotPassword`} onClick={handleToggle}>Already having Account? Sign In</a>
               </>
             )}
             {!isSignUp && (
               <>
                 <a href="#" className={`text-xs text-gray-600 block mb-2 z-10 forgotPassword`}>Forgot Your Password?</a>
-                <button className={`btn-primary signInButton z-10`} type="submit" id="signin" onClick={handleSignIn}>Sign In</button>
+                <button className={`btn-primary signInButton z-10`} type="submit" id="signin_mob" onClick={handleSignIn}>Sign In</button>
                 <a href="#" className={`text-xs text-gray-600 block mb-2 forgotPassword`} onClick={handleToggle}>Not having Account? Sign Up</a>
               </>
             )}
