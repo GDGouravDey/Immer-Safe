@@ -1,13 +1,13 @@
 import { React, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { close, menu } from '../assets';
-import fireguard from '../assets/fireguard.png';
+import immersafe from '../assets/immersafe.png';
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   return (
     <nav className="w-full flex py-6 justify-between items-center navbar">
-      <img src={fireguard} alt="fireguard" className="w-[180px]" />
+      <img src={immersafe} alt="immersafe" className="w-[180px]" />
 
       <ul className="list-none sm:flex hidden justify-end items-center flex-1">
         <li className="font-poppins font-normal cursor-pointer text-[18px] text-white mr-10"><Link to="/">Home</Link></li>

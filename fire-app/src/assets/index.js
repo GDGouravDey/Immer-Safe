@@ -32,7 +32,7 @@ import mobile from "./mobile.jpg";
 import home_safety from "./home_safety.jpg";
 import electrical_safety from "./electrical_safety.png";
 import emergency from "./emergency.jpg";
-import fireguard from "./fireguard.png";
+import immersafe from "./immersafe.png";
 import logo2 from "./logo.png";
 import bullet from "./bullet.svg";
 import google_auth from "./google_auth.svg";
@@ -72,7 +72,7 @@ export {
   home_safety,
   electrical_safety,
   emergency,
-  fireguard,
+  immersafe,
   logo2,
   bullet,
   google_auth,
