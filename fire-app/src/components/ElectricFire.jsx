@@ -23,7 +23,7 @@ const ElectricFire = () => {
             <section className={`${layout.section2} relative`}>
                 <div className="absolute z-[0] w-[60%] h-[60%] -right-[50%] rounded-full orange__gradient bottom-40" />
                 <div className={`${layout.sectionImg} md:ml-7`}>
-                    <img src={electrical_safety} alt="electrical_safety" className="w-[100%] h-[80%] relative z-[5] ml-1 mb-12 pr-5 rounded-[3.5rem]" />
+                    <img src={electrical_safety} alt="electrical_safety" className="w-[100%] xl:w-[90%] h-[80%] relative z-[5] ml-1 mb-12 pr-5 rounded-[3.5rem]" />
                 </div>
                 <div className={layout.sectionInfo}>
                     <h2 className={`${styles.heading2} flex justify-center items-center mb-[-40px] md:ml-[-15px]`}>Electrical Fire Safety</h2>

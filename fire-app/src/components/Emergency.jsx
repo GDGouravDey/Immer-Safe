@@ -38,7 +38,7 @@ const Emergency = () => {
                     </section>
                 </div>
                 <div className={layout.sectionImg}>
-                    <img src={emergency} alt="emergency" className="w-[100%] h-[80%] relative z-[5] mb-12 pr-5 rounded-[3.5rem]" />
+                    <img src={emergency} alt="emergency" className="w-[100%] xl:w-[90%] h-[80%] relative z-[5] mb-12 pr-5 rounded-[3.5rem]" />
                 </div>
             </section>
         </>

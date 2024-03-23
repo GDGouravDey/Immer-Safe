@@ -42,24 +42,23 @@ const Navbar = () => {
 
   return (
     <nav className="w-full flex py-6 justify-between items-center navbar">
-      <img src={immersafe} alt="immersafe" className="w-[180px]" />
+      <img src={immersafe} alt="immersafe" className="w-[180px] xl:w-[200px]" />
 
       <ul className="list-none sm:flex hidden justify-end items-center flex-1">
-        <li className="font-poppins font-normal cursor-pointer text-[18px] text-white mr-10"><Link to="/">Home</Link></li>
+        <li className="font-poppins font-normal cursor-pointer text-[18px] xl:text-[23px] text-white mr-10 xl:mr-12"><Link to="/">Home</Link></li>
         {loggedIn && (
           <>
-            <li className="font-poppins font-normal cursor-pointer text-[18px] text-white mr-10">
+            <li className="font-poppins font-normal cursor-pointer text-[18px] xl:text-[23px] text-white mr-10 xl:mr-12">
               <Link to="/notifications">Notifications</Link>
             </li>
-            {/* Add other navigation links */}
           </>
         )}
-        <li className="font-poppins font-normal cursor-pointer text-[18px] text-white mr-10"><Link to="/tips">Safety Tips</Link></li>
-        <li className="font-poppins font-normal cursor-pointer text-[18px] text-white mr-10"><Link to="/about">About Us</Link></li>
+        <li className="font-poppins font-normal cursor-pointer text-[18px] xl:text-[23px] text-white mr-10 xl:mr-12"><Link to="/tips">Safety Tips</Link></li>
+        <li className="font-poppins font-normal cursor-pointer text-[18px] xl:text-[23px] text-white mr-10 xl:mr-12"><Link to="/about">About Us</Link></li>
         {loggedIn ? (
-          <li className="font-poppins font-normal cursor-pointer text-[18px] text-white mr-10" onClick={handleLogout}>Logout</li>
+          <li className="font-poppins font-normal cursor-pointer text-[18px] xl:text-[23px] text-white mr-10 xl:mr-12" onClick={handleLogout}>Logout</li>
         ) : (
-          <li className="font-poppins font-normal cursor-pointer text-[18px] text-white mr-10"><Link to="/signin">Sign In</Link></li>
+          <li className="font-poppins font-normal cursor-pointer text-[18px] xl:text-[23px] text-white mr-10 xl:mr-12"><Link to="/signin">Sign In</Link></li>
         )}
       </ul>
 
