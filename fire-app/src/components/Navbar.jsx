@@ -86,7 +86,7 @@ const Navbar = () => {
               </>
             )}
             <li className="font-poppins font-normal cursor-pointer text-[18px] text-white mr-10 mb-1.5"><Link to="/tips">Safety Tips</Link></li>
-            <li className="font-poppins font-normal cursor-pointer text-[18px] text-white mr-10"><Link to="/about">About Us</Link></li>
+            <li className="font-poppins font-normal cursor-pointer text-[18px] text-white mr-10 mb-1.5"><Link to="/about">About Us</Link></li>
             {loggedIn ? (
               <li className="font-poppins font-normal cursor-pointer text-[18px] text-white mr-10" onClick={handleLogout}>Logout</li>
             ) : (
