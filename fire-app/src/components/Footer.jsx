@@ -11,7 +11,7 @@ const Footer = () => (
           alt="logo"
           className="w-[266px] h-[72.14px] object-contain"
         />
-        <p className={`${styles.paragraph} mt-4 max-w-[312px]`}>
+        <p className={`${styles.paragraph} mt-4 max-w-[312px] xl:text-[18px]`}>
           A State-of-the-Art Smart Fire Safety System made possible.
         </p>
       </div>
@@ -19,7 +19,7 @@ const Footer = () => (
       <div className="flex-[1.5] w-full flex flex-row justify-between flex-wrap md:mt-0 mt-10">
         {footerLinks.map((footerlink) => (
           <div key={footerlink.title} className={`flex flex-col ss:my-0 my-4 min-w-[150px]`}>
-            <h4 className="font-poppins font-medium text-[18px] leading-[27px] text-white">
+            <h4 className="font-poppins font-medium text-[18px] leading-[27px] text-white xl:text-[20px]">
               {footerlink.title}
             </h4>
             <ul className="list-none mt-4">
@@ -28,7 +28,7 @@ const Footer = () => (
                   key={link.name}
                   className={`font-poppins font-normal text-[16px] leading-[24px] text-dimWhite hover:text-secondary cursor-pointer ${
                     index !== footerlink.links.length - 1 ? "mb-4" : "mb-0"
-                  }`}
+                  } xl:text-[18px]`}
                 >
                   {link.name}
                 </li>
@@ -40,7 +40,7 @@ const Footer = () => (
     </div>
 
     <div className="w-full flex justify-between items-center md:flex-row flex-col pt-6 border-t-[1px] border-t-[#3F3E45]">
-      <p className="font-poppins font-normal text-center text-[18px] leading-[27px] text-white">
+      <p className="font-poppins font-normal text-center text-[18px] leading-[27px] text-white xl:text-[18px]">
         Copyright Ⓒ 2024 Immer Safe. All Rights Reserved.
       </p>
 
