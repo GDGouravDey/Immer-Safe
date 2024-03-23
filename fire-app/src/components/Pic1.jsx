@@ -8,7 +8,7 @@ const Pic1 = () => (
       <h2 className={`${styles.heading2} lg:text-[55px]`}>
         Get immediate notification <br className="sm:block hidden" /> in case of emergency.
       </h2>
-      <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
+      <p className={`${styles.paragraph} max-w-[470px] xl:max-w-[550px] mt-5`}>
       Stay informed and receive immediate notifications during emergency situations. Our advanced alert system ensures you are aware and can take necessary actions promptly.
       </p>
 

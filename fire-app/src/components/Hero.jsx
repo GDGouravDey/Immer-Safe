@@ -17,7 +17,7 @@ const Hero = () => {
             <GetStarted />
           </div> */}
         </div>
-        <p className={`${styles.paragraph} max-w-[470px] mt-8`}>
+        <p className={`${styles.paragraph} max-w-[470px] xl:max-w-[550px] mt-8`}>
           At Smart Fire Safety, we go beyond traditional fire safety measures. Our cutting-edge system not only provides real-time notifications to building occupants but also ensures a rapid and coordinated response from rescue teams.
         </p>
       </div>

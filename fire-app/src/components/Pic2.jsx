@@ -16,7 +16,7 @@ const Pic2 = () => (
       <h2 className={`${styles.heading2} ml-8`}>
       Stay Informed. <br className="sm:block hidden" /> Stay Safe.
       </h2>
-      <p className={`${styles.paragraph} max-w-[470px] mt-6 ml-6`}>
+      <p className={`${styles.paragraph} max-w-[470px] xl:max-w-[550px] mt-6 ml-6`}>
       Our website provides real-time updates on recent fire incidents, safety tips, and contact information for emergency services. Join us in building a safer world where everyone is informed, prepared, and protected against the threat of fire.
       </p>
 
