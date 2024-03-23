@@ -41,7 +41,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="w-full flex py-6 justify-between items-center navbar">
+    <nav className="w-full flex py-6 xl:py-8 justify-between items-center navbar">
       <img src={immersafe} alt="immersafe" className="w-[180px] xl:w-[200px]" />
 
       <ul className="list-none sm:flex hidden justify-end items-center flex-1">
