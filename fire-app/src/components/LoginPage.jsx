@@ -2,6 +2,9 @@ import React, { useRef, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { google_auth } from '../assets/index';
 import { useNavigate } from 'react-router-dom';
+// import { useNotificationCenter } from "react-toastify/addons/use-notification-center";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const LoginPage = () => {
   const containerRef = useRef(null);
@@ -12,6 +15,24 @@ const LoginPage = () => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [phone_num, setPhoneNum] = useState();
+
+  // const { notifications, clear, markAllAsRead, markAsRead } = useNotificationCenter();
+
+  const signinSuccess = () => {
+    toast.success('Successfully Signed In!');
+  };
+
+  const signinFailure = () => {
+    toast.error('Failed to Sign In!');
+  };
+
+  const signupSuccess = () => {
+    toast.success('Successfully Registered New User!');
+  };
+
+  const signupFailure = () => {
+    toast.error('Failed to Register New User!');
+  };
 
   const handleToggle = () => {
     containerRef.current.classList.toggle('active');
@@ -39,7 +60,7 @@ const LoginPage = () => {
       });
 
       if (response.ok) {
-        console.log("Yay");
+        console.log("Successful Registration");
         const responseData = await response.json();
         console.log(responseData);
         // Handle successful registration response
@@ -47,9 +68,11 @@ const LoginPage = () => {
         document.cookie = `email=${responseData.email}; max-age=86400; path=/`;
         document.cookie = `phone_num=${responseData.phone_num}; max-age=86400; path=/`;
         navigate("/");
+        signupSuccess();
       } else {
         // Handle error response
         console.error('Registration failed:', response.statusText);
+        signupFailure();
       }
     } catch (error) {
       console.error('Error during registration:', error);
@@ -66,7 +89,6 @@ const LoginPage = () => {
     console.log(data);
 
     document.cookie = `email=${email}; max-age=86400; path=/`;
-    document.cookie = `password=${password}; max-age=86400; path=/`;
     try {
       const response = await fetch('http://127.0.0.1:8000/login', {
         method: 'POST',
@@ -85,9 +107,11 @@ const LoginPage = () => {
         document.cookie = `email=${responseData.user.email}; max-age=86400; path=/`;
         document.cookie = `phone_num=${responseData.phone_num}; max-age=86400; path=/`;
         navigate("/");
+        signinSuccess();
       } else {
         // Handle error response
         console.error('Login failed:', response.statusText);
+        signinFailure();
       }
     } catch (error) {
       console.error('Error during login:', error);

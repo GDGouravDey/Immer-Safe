@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { close, menu } from '../assets';
 import immersafe from '../assets/immersafe.png';
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
@@ -11,6 +13,10 @@ const Navbar = () => {
   const checkLoggedIn = () => {
     const username = getCookie('username');
     setLoggedIn(!!username); // Set loggedIn to true if username cookie exists, false otherwise
+  };
+
+  const signout = () => {
+    toast.success('Logged Out Successfully!');
   };
 
   useEffect(() => {
@@ -36,8 +42,11 @@ const Navbar = () => {
 
   // Function to handle logout
   const handleLogout = () => {
-    deleteCookie('username'); // Delete the username cookie
-    setLoggedIn(false); // Update login status
+    deleteCookie('username');
+    deleteCookie('email');
+    deleteCookie('phone_num');
+    setLoggedIn(false);
+    signout();
   };
 
   return (
