@@ -100,31 +100,31 @@ export const hometips = [
 
 export const electricaltips = [
   {
-    id: "tip-1",
+    id: "tip-6",
     title: "Do not overload electrical outlets and ensure wiring is in good condition.",
     link: "https://www.youtube.com/watch?v=qyAPIui38HE&t=6s"
 
   },
   {
-    id: "tip-2",
+    id: "tip-7",
     title: "Keep combustible materials away from electrical appliances and outlets.",
     link: "https://www.youtube.com/watch?v=1BY_S9Kctdw"
 
   },
   {
-    id: "tip-3",
+    id: "tip-8",
     title: "Regularly inspect electrical cords for signs of wear or damage, and replace them if needed.",
     link: "https://www.youtube.com/watch?v=ulUtih5TNAA"
 
   },
   {
-    id: "tip-4",
+    id: "tip-9",
     title: "If you experience frequent tripped circuit breakers or blown fuses, consult an electrician to address the underlying issue.",
     link: "https://www.youtube.com/watch?v=8j9IsWDOgUo"
 
   },
   {
-    id: "tip-5",
+    id: "tip-10",
     title: "Unplug appliances when not in use, especially those with heating elements.",
     link: "https://www.youtube.com/watch?v=koZFUTvP0nQ&t=171s"
 
@@ -133,31 +133,31 @@ export const electricaltips = [
 
 export const emergencytips = [
   {
-    id: "tip-1",
+    id: "tip-11",
     title: "If there's a fire alarm system, activate it immediately to alert others in the building.",
     link: "https://www.youtube.com/watch?v=DVT4KO2ii14&t=57s"
 
   },
   {
-    id: "tip-3",
+    id: "tip-12",
     title: "If the fire is spreading and cannot be easily controlled, prioritize immediate evacuation.",
     link: "https://www.youtube.com/watch?v=3aLWlDY_G9w"
 
   },
   {
-    id: "tip-3",
+    id: "tip-13",
     title: "Familiarize yourself with emergency exits in your home and workplace. Look out for such exits during evacuation.",
     link: "https://www.youtube.com/watch?v=OSGHpjjqSo8&t=101s"
 
   },
   {
-    id: "tip-4",
+    id: "tip-14",
     title: "Dial emergency services as soon as possible to report the emergency and provide your location.",
     link: "https://indianhelpline.com/"
 
   },
   {
-    id: "tip-5",
+    id: "tip-15",
     title: "If there is smoke, stay low to the ground while evacuating to avoid inhaling toxic fumes.",
     link: "https://www.youtube.com/watch?v=zeiN_A-OSt8"
 

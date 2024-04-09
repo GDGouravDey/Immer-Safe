@@ -4,8 +4,8 @@ import { emergency } from "../assets";
 import { layout } from "../style";
 import { bullet } from "../assets";
 
-const FeatureCard = ({ icon, title, content, index }) => (
-    <div className={`flex flex-row p-4 rounded-[20px] feature-card`}>
+const FeatureCard = ({ icon, title, content, index, link }) => (
+    <a href={`${link}`} target={"_blank"} className={`flex flex-row p-4 rounded-[20px] feature-card`} style={{ zIndex: 10 }}>
         <div className={`w-[40px] h-[40px] -mt-2 rounded-full ${styles.flexCenter}`}>
             <img src={bullet} alt="bullet" className="w-[50%] h-[50%] object-contain" />
         </div>
@@ -14,7 +14,7 @@ const FeatureCard = ({ icon, title, content, index }) => (
                 {title}
             </h4>
         </div>
-    </div>
+    </a>
 );
 
 const Emergency = () => {
@@ -27,7 +27,7 @@ const Emergency = () => {
                     <section id="emergencytips" className={layout.section}>
                         <div className={`${layout.sectionImg2} flex-col`}>
                             {emergencytips.map((tip, index) => (
-                                <FeatureCard key={tip.id} {...tip} index={index} />
+                                <FeatureCard key={tip.id} link={tip.link} {...tip} index={index} />
                             ))}
                         </div>
                         {/* <div className={`${layout.sectionImg} flex-col`}>
