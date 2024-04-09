@@ -46,16 +46,16 @@ export const features2 = [
   {
     id: "feature-4",
     icon: star,
-    title: "Lower Human Interference",
+    title: "Zero Manual Interference",
     content:
-      "Minimizing the need for manual intervention, reducing the risk of delays and ensuring a faster response",
+      " Eliminate the need for manual intervention, reducing the risk of delays and ensuring a faster response",
   },
   {
     id: "feature-5",
     icon: shield,
     title: "Safety Tips and Resources",
     content:
-      "Explore our comprehensive guide to fire safety, including tips for prevention, evacuation, and using fire extinguishers",
+      "Explore our comprehensive guide to fire safety, including tips for prevention, evacuation and using fire extinguishers, including tutorials",
   },
   {
     id: "feature-6",
@@ -70,22 +70,31 @@ export const hometips = [
   {
     id: "tip-1",
     title: "Install smoke detectors in key areas of your home or building.",
+    link: "https://www.youtube.com/watch?v=nbtrbwpS01M"
   },
   {
     id: "tip-2",
     title: "Have a fire evacuation plan and practice it regularly.",
+    link: "https://www.youtube.com/watch?v=TuMWWquiqV0&t=2s"
+
   },
   {
     id: "tip-3",
     title: "Keep fire extinguishers accessible and ensure everyone knows how to use them.",
+    link: "https://www.youtube.com/watch?v=GVBamXXVD30"
+
   },
   {
     id: "tip-4",
     title: "Always turn off the gas supply of LPG cylinder valve when the appliance is not in use.",
+    link: "https://www.youtube.com/watch?v=hnluUwjpv5g"
+
   },
   {
     id: "tip-5",
     title: "Stay low to the ground in case of smoke to minimize inhalation of toxic fumes.",
+    link: "https://www.youtube.com/watch?v=zeiN_A-OSt8"
+
   },
 ];
 
@@ -93,22 +102,32 @@ export const electricaltips = [
   {
     id: "tip-1",
     title: "Do not overload electrical outlets and ensure wiring is in good condition.",
+    link: "https://www.youtube.com/watch?v=qyAPIui38HE&t=6s"
+
   },
   {
     id: "tip-2",
     title: "Keep combustible materials away from electrical appliances and outlets.",
+    link: "https://www.youtube.com/watch?v=1BY_S9Kctdw"
+
   },
   {
     id: "tip-3",
     title: "Regularly inspect electrical cords for signs of wear or damage, and replace them if needed.",
+    link: "https://www.youtube.com/watch?v=ulUtih5TNAA"
+
   },
   {
     id: "tip-4",
     title: "If you experience frequent tripped circuit breakers or blown fuses, consult an electrician to address the underlying issue.",
+    link: "https://www.youtube.com/watch?v=8j9IsWDOgUo"
+
   },
   {
     id: "tip-5",
     title: "Unplug appliances when not in use, especially those with heating elements.",
+    link: "https://www.youtube.com/watch?v=koZFUTvP0nQ&t=171s"
+
   },
 ];
 
@@ -116,22 +135,32 @@ export const emergencytips = [
   {
     id: "tip-1",
     title: "If there's a fire alarm system, activate it immediately to alert others in the building.",
+    link: "https://www.youtube.com/watch?v=DVT4KO2ii14&t=57s"
+
   },
   {
     id: "tip-3",
     title: "If the fire is spreading and cannot be easily controlled, prioritize immediate evacuation.",
+    link: "https://www.youtube.com/watch?v=3aLWlDY_G9w"
+
   },
   {
     id: "tip-3",
     title: "Familiarize yourself with emergency exits in your home and workplace. Look out for such exits during evacuation.",
+    link: "https://www.youtube.com/watch?v=OSGHpjjqSo8&t=101s"
+
   },
   {
     id: "tip-4",
     title: "Dial emergency services as soon as possible to report the emergency and provide your location.",
+    link: "https://indianhelpline.com/"
+
   },
   {
     id: "tip-5",
     title: "If there is smoke, stay low to the ground while evacuating to avoid inhaling toxic fumes.",
+    link: "https://www.youtube.com/watch?v=zeiN_A-OSt8"
+
   },
 ];
 
