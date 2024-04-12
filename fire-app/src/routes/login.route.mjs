@@ -5,7 +5,7 @@ import bcrypt from 'bcryptjs';
 import User from '../models/user.mjs'; 
 import app from '../server.mjs';
 const router = express.Router();
-import dbConnect from '../db/dbconnect.mjs';
+import dbConnect from '../dbconnect.mjs';
 dbConnect();
 /*const corsoptions={
   origin: 'http://127.0.0.1:5500/', // Specify the allowed origin (e.g., your client's domain)

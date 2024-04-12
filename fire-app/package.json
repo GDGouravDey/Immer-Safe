@@ -1,12 +1,13 @@
 {
-  "name": "fire-app",
+  "name": "immer-safe",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "start": "node src/server.mjs",
+    "notify": "node src/app.mjs",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
@@ -27,7 +28,8 @@
     "react-helmet": "^6.1.0",
     "react-router-dom": "^6.22.1",
     "react-toastify": "^10.0.5",
-    "session": "^0.1.0"
+    "session": "^0.1.0",
+    "twilio": "^5.0.3"
   },
   "devDependencies": {
     "@types/react": "^18.2.56",

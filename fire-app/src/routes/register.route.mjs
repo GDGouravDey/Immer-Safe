@@ -4,7 +4,7 @@ import { Strategy as LocalStrategy } from 'passport-local';
 import User from '../models/user.mjs'; 
 import app from '../server.mjs';
 const router = express.Router();
-import dbConnect from '../db/dbconnect.mjs';
+import dbConnect from '../dbconnect.mjs';
 dbConnect();
 /*const corsoptions={
   origin: 'http://127.0.0.1:5500/', // Specify the allowed origin (e.g., your client's domain)
@@ -83,8 +83,8 @@ router.post("/register", async (req, res) => {
       `userId=${user._id}; Max-Age=86400; Path=/ ;httpOnly: true`,
       `username=${user.username}; Max-Age=86400; Path=/ `
     ]);
-    //res.cookie('email', user.email);
-    //res.cookie('phone_num', user.phone_num);
+    // res.cookie('email', user.email);
+    // res.cookie('phone_num', user.phone_num);
     return res.status(200)
     .cookie('email', user.email)
     .cookie('phone_num', user.phone_num )

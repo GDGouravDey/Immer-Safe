@@ -1,7 +1,7 @@
 import express from 'express';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
-import dbConnect from './db/dbconnect.mjs';
+import dbConnect from './dbconnect.mjs';
 import registerrouter from './routes/register.route.mjs'
 import loginrouter from './routes/login.route.mjs'
 const port = 8000; // process.env.port 

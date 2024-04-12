@@ -433,3 +433,17 @@ input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button { 
   -webkit-appearance: none; 
 }
+
+.notification-container {
+  position: relative;
+  overflow: hidden; /* Ensure notifications are hidden initially */
+}
+
+.notification-item {
+  transition: transform 0.5s ease; /* Add transition effect */
+  transform: translateX(-101%); /* Initially translate notifications off-screen */
+}
+
+.notification-item.show {
+  transform: translateX(0); /* Translate notifications to their original position */
+}

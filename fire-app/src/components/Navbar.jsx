@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { close, menu } from '../assets';
 import immersafe from '../assets/immersafe.png';
@@ -8,11 +9,13 @@ import "react-toastify/dist/ReactToastify.css";
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false); // Track login status
+  const [username, setUsername] = useState(''); // Track username
 
   // Function to check if user is logged in based on cookie
   const checkLoggedIn = () => {
     const username = getCookie('username');
     setLoggedIn(!!username); // Set loggedIn to true if username cookie exists, false otherwise
+    setUsername(username || ''); // Set username to the value of the cookie or an empty string
   };
 
   const signout = () => {
@@ -21,8 +24,21 @@ const Navbar = () => {
 
   useEffect(() => {
     checkLoggedIn(); // Check login status when component mounts
+    // Send username to backend when component mounts
+    sendUsernameToBackend();
   }, []);
 
+  // Function to send the username cookie value to the backend
+  const sendUsernameToBackend = () => {
+    const username = getCookie('username');
+    axios.post('http://localhost:3000/backend-route', { username })
+      .then(response => {
+        console.log('Username sent to backend successfully:', response.data);
+      })
+      .catch(error => {
+        console.error('Error sending username to backend:', error);
+      });
+  };
   // Function to get cookie by name
   const getCookie = (name) => {
     const cookies = document.cookie.split(';');
@@ -46,11 +62,13 @@ const Navbar = () => {
     deleteCookie('email');
     deleteCookie('phone_num');
     setLoggedIn(false);
+    setUsername('');
     signout();
   };
 
   return (
     <nav className="w-full flex py-6 xl:py-8 justify-between items-center navbar">
+      <p className="hidden" id="name">{username}</p>
       <img src={immersafe} alt="immersafe" className="w-[180px] xl:w-[200px]" />
 
       <ul className="list-none sm:flex hidden justify-end items-center flex-1">
