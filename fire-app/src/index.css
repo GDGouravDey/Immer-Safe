@@ -447,3 +447,29 @@ input[type=number]::-webkit-outer-spin-button {
 .notification-item.show {
   transform: translateX(0); /* Translate notifications to their original position */
 }
+
+.navbar a {
+  color: white; /* Default link color */
+  text-decoration: none; /* Remove default underline */
+  position: relative; /* Set position relative for pseudo-element */
+}
+
+.navbar a::after {
+  content: ""; /* Add a pseudo-element */
+  position: absolute;
+  left: 50%; /* Start position at the center */
+  bottom: -4px; /* Adjust the distance from the text */
+  width: 0; /* Start with no width */
+  height: 2.3px; /* Adjust the thickness of the underline */
+  background-color: white; /* Color of the underline */
+  transition: all 0.5s ease; /* Smooth transition for width and position change */
+}
+
+.navbar a:hover::after {
+  width: 100%; /* Expand to full width on hover */
+  left: 0; /* Align to the left edge */
+}
+
+.navbar a:hover {
+  color: #ffffff; /* Change text color on hover */
+}

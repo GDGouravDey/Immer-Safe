@@ -83,7 +83,7 @@ const Navbar = () => {
         <li className="font-poppins font-normal cursor-pointer text-[18px] xl:text-[23px] text-white mr-10 xl:mr-12"><Link to="/tips">Safety Tips</Link></li>
         <li className="font-poppins font-normal cursor-pointer text-[18px] xl:text-[23px] text-white mr-10 xl:mr-12"><Link to="/about">About Us</Link></li>
         {loggedIn ? (
-          <li className="font-poppins font-normal cursor-pointer text-[18px] xl:text-[23px] text-white mr-10 xl:mr-12" onClick={handleLogout}>Logout</li>
+          <li className="font-poppins font-normal cursor-pointer text-[18px] xl:text-[23px] text-white mr-10 xl:mr-12" onClick={handleLogout}><a>Logout</a></li>
         ) : (
           <li className="font-poppins font-normal cursor-pointer text-[18px] xl:text-[23px] text-white mr-10 xl:mr-12"><Link to="/signin">Sign In</Link></li>
         )}
@@ -114,7 +114,7 @@ const Navbar = () => {
             <li className="font-poppins font-normal cursor-pointer text-[18px] text-white mr-10 mb-1.5"><Link to="/tips">Safety Tips</Link></li>
             <li className="font-poppins font-normal cursor-pointer text-[18px] text-white mr-10 mb-1.5"><Link to="/about">About Us</Link></li>
             {loggedIn ? (
-              <li className="font-poppins font-normal cursor-pointer text-[18px] text-white mr-10" onClick={handleLogout}>Logout</li>
+              <li className="font-poppins font-normal cursor-pointer text-[18px] text-white mr-10" onClick={handleLogout}><a>Logout</a></li>
             ) : (
               <li className="font-poppins font-normal cursor-pointer text-[18px] text-white mr-10"><Link to="/signin">Sign In</Link></li>
             )}
