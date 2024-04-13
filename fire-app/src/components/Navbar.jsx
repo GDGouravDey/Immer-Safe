@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { close, menu } from '../assets';
 import immersafe from '../assets/immersafe.png';
 import { toast } from "react-toastify";
@@ -10,6 +10,8 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false); // Track login status
   const [username, setUsername] = useState(''); // Track username
+  const navigateTo = useNavigate();
+  const location = useLocation();
 
   // Function to check if user is logged in based on cookie
   const checkLoggedIn = () => {
@@ -39,6 +41,7 @@ const Navbar = () => {
         console.error('Error sending username to backend:', error);
       });
   };
+
   // Function to get cookie by name
   const getCookie = (name) => {
     const cookies = document.cookie.split(';');
@@ -64,6 +67,9 @@ const Navbar = () => {
     setLoggedIn(false);
     setUsername('');
     signout();
+    if (location.pathname === "/notifications") {
+      navigateTo("/");
+    }
   };
 
   return (
@@ -72,20 +78,26 @@ const Navbar = () => {
       <img src={immersafe} alt="immersafe" className="w-[180px] xl:w-[200px]" />
 
       <ul className="list-none sm:flex hidden justify-end items-center flex-1">
-        <li className="font-poppins font-normal cursor-pointer text-[18px] xl:text-[23px] text-white mr-10 xl:mr-12"><Link to="/">Home</Link></li>
+        <li className={`font-poppins font-normal cursor-pointer text-[18px] xl:text-[23px] text-white mr-10 xl:mr-12 ${location.pathname === "/" && "active"}`}>
+          <Link to="/">Home</Link>
+        </li>
         {loggedIn && (
           <>
-            <li className="font-poppins font-normal cursor-pointer text-[18px] xl:text-[23px] text-white mr-10 xl:mr-12">
+            <li className={`font-poppins font-normal cursor-pointer text-[18px] xl:text-[23px] text-white mr-10 xl:mr-12 ${location.pathname === "/notifications" && "active"}`}>
               <Link to="/notifications">Notifications</Link>
             </li>
           </>
         )}
-        <li className="font-poppins font-normal cursor-pointer text-[18px] xl:text-[23px] text-white mr-10 xl:mr-12"><Link to="/tips">Safety Tips</Link></li>
-        <li className="font-poppins font-normal cursor-pointer text-[18px] xl:text-[23px] text-white mr-10 xl:mr-12"><Link to="/about">About Us</Link></li>
+        <li className={`font-poppins font-normal cursor-pointer text-[18px] xl:text-[23px] text-white mr-10 xl:mr-12 ${location.pathname === "/tips" && "active"}`}>
+          <Link to="/tips">Safety Tips</Link>
+        </li>
+        <li className={`font-poppins font-normal cursor-pointer text-[18px] xl:text-[23px] text-white mr-10 xl:mr-12 ${location.pathname === "/about" && "active"}`}>
+          <Link to="/about">About Us</Link>
+        </li>
         {loggedIn ? (
-          <li className="font-poppins font-normal cursor-pointer text-[18px] xl:text-[23px] text-white mr-10 xl:mr-12" onClick={handleLogout}><a>Logout</a></li>
+          <li className={`font-poppins font-normal cursor-pointer text-[18px] xl:text-[23px] text-white mr-10 xl:mr-12 ${location.pathname === "/logout" && "active"}`} onClick={handleLogout}><a>Logout</a></li>
         ) : (
-          <li className="font-poppins font-normal cursor-pointer text-[18px] xl:text-[23px] text-white mr-10 xl:mr-12"><Link to="/signin">Sign In</Link></li>
+          <li className={`font-poppins font-normal cursor-pointer text-[18px] xl:text-[23px] text-white mr-10 xl:mr-12 ${location.pathname === "/signin" && "active"}`}><Link to="/signin">Sign In</Link></li>
         )}
       </ul>
 
@@ -102,21 +114,27 @@ const Navbar = () => {
             } p-7 bg-black-gradient absolute top-[5.2rem] right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar z-50`}
         >
           <ul className="list-none flex justify-end items-start flex-1 flex-col">
-            <li className="font-poppins font-normal cursor-pointer text-[18px] text-white mr-10 mb-1.5"><Link to="/">Home</Link></li>
+            <li className={`font-poppins font-normal cursor-pointer text-[18px] text-white mr-10 mb-1.5 ${location.pathname === "/" && "active"}`}>
+              <Link to="/">Home</Link>
+            </li>
             {loggedIn && (
               <>
-                <li className="font-poppins font-normal cursor-pointer text-[18px] text-white mr-10 mb-1.5">
+                <li className={`font-poppins font-normal cursor-pointer text-[18px] text-white mr-10 mb-1.5 ${location.pathname === "/notifications" && "active"}`}>
                   <Link to="/notifications">Notifications</Link>
                 </li>
                 {/* Add other navigation links */}
               </>
             )}
-            <li className="font-poppins font-normal cursor-pointer text-[18px] text-white mr-10 mb-1.5"><Link to="/tips">Safety Tips</Link></li>
-            <li className="font-poppins font-normal cursor-pointer text-[18px] text-white mr-10 mb-1.5"><Link to="/about">About Us</Link></li>
+            <li className={`font-poppins font-normal cursor-pointer text-[18px] text-white mr-10 mb-1.5 ${location.pathname === "/tips" && "active"}`}>
+              <Link to="/tips">Safety Tips</Link>
+            </li>
+            <li className={`font-poppins font-normal cursor-pointer text-[18px] text-white mr-10 mb-1.5 ${location.pathname === "/about" && "active"}`}>
+              <Link to="/about">About Us</Link>
+            </li>
             {loggedIn ? (
-              <li className="font-poppins font-normal cursor-pointer text-[18px] text-white mr-10" onClick={handleLogout}><a>Logout</a></li>
+              <li className={`font-poppins font-normal cursor-pointer text-[18px] text-white mr-10 ${location.pathname === "/logout" && "active"}`} onClick={handleLogout}><a>Logout</a></li>
             ) : (
-              <li className="font-poppins font-normal cursor-pointer text-[18px] text-white mr-10"><Link to="/signin">Sign In</Link></li>
+              <li className={`font-poppins font-normal cursor-pointer text-[18px] text-white mr-10 ${location.pathname === "/signin" && "active"}`}><Link to="/signin">Sign In</Link></li>
             )}
           </ul>
         </div>

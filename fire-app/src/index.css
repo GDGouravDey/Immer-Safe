@@ -27,11 +27,11 @@
 .text-gradient {
   background: radial-gradient(
     64.18% 64.18% at 71.16% 35.69%,
-    #e5ded2 0.89%,   /* White */
-    #d1ac79 17.23%,  /* Light Orange */
-    #dba978 42.04%,  /* Orange */
-    #da9652 55.12%,  /* Dark Orange */
-    #d2802e 71.54%,  /* Orange-Red */
+    #e5ded2 0.89%,
+    #d1ac79 17.23%,  
+    #dba978 42.04%,  
+    #da9652 55.12%,  
+    #d2802e 71.54%,  
     #FF8000 100%
   );
   -webkit-background-clip: text;
@@ -436,42 +436,46 @@ input[type=number]::-webkit-outer-spin-button {
 
 .notification-container {
   position: relative;
-  overflow: hidden; /* Ensure notifications are hidden initially */
+  overflow: hidden;
 }
 
 .notification-item {
-  transition: transform 0.5s ease; /* Add transition effect */
-  transform: translateX(-101%); /* Initially translate notifications off-screen */
+  transition: transform 0.5s ease;
+  transform: translateX(-101%);
 }
 
 .notification-item.show {
-  transform: translateX(0); /* Translate notifications to their original position */
+  transform: translateX(0);
 }
 
 .navbar a {
-  color: white; /* Default link color */
-  text-decoration: none; /* Remove default underline */
-  position: relative; /* Set position relative for pseudo-element */
+  color: white; 
+  text-decoration: none;
+  position: relative; 
 }
 
 .navbar a::after {
-  content: ""; /* Add a pseudo-element */
+  content: ""; 
   position: absolute;
-  left: 50%; /* Start position at the center */
-  bottom: -4px; /* Adjust the distance from the text */
-  width: 0; /* Start with no width */
-  height: 2.3px; /* Adjust the thickness of the underline */
-  background-color: white; /* Color of the underline */
-  transition: all 0.5s ease; /* Smooth transition for width and position change */
+  left: 50%; 
+  bottom: -4px; 
+  width: 0; 
+  height: 2.3px; 
+  background-color: white; 
+  transition: all 0.5s ease; 
+}
+
+.navbar a.active {
+  color: #ffffff;
 }
 
 .navbar a:hover::after {
-  width: 100%; /* Expand to full width on hover */
-  left: 0; /* Align to the left edge */
+  width: 100%;
+  left: 0; 
 }
 
 .navbar a:hover {
-  color: #ffffff; /* Change text color on hover */
+  color: #ffffff; 
 }
 
 .modal-background {
@@ -480,8 +484,8 @@ input[type=number]::-webkit-outer-spin-button {
   left: 0;
   width: 100%;
   height: 100%;
-  backdrop-filter: blur(8px); /* Apply blur effect */
-  z-index: 999; /* Ensure the modal background appears beneath the modal */
+  backdrop-filter: blur(8px); 
+  z-index: 999; 
 }
 
 .modal {
@@ -489,12 +493,12 @@ input[type=number]::-webkit-outer-spin-button {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+  background-color: rgba(255, 255, 255, 0.9); 
   width: 80%;
   max-width: 600px;
   padding: 20px;
   border-radius: 10px;
-  z-index: 1000; /* Ensure the modal appears above the modal background */
+  z-index: 1000; 
 }
 
 .modal-content {
@@ -511,4 +515,15 @@ input[type=number]::-webkit-outer-spin-button {
   font-size: 20px;
   cursor: pointer;
   color: black;
+}
+
+.active a::after {
+  content: ""; 
+  position: absolute;
+  left: 0; 
+  bottom: -4px; 
+  width: 100%; 
+  height: 2.3px; 
+  background-color: white; 
+  transition: all 0.5s ease; 
 }
