@@ -64,9 +64,9 @@ const LoginPage = () => {
         const responseData = await response.json();
         console.log(responseData);
         // Handle successful registration response
-        document.cookie = `username=${responseData.username}; max-age=86400; path=/`;
-        document.cookie = `email=${responseData.email}; max-age=86400; path=/`;
-        document.cookie = `phone_num=${responseData.phone_num}; max-age=86400; path=/`;
+        document.cookie = `username=${responseData.user.username}; max-age=86400; path=/`;
+        document.cookie = `email=${responseData.user.email}; max-age=86400; path=/`;
+        document.cookie = `phone_num=${responseData.user.phone_num}; max-age=86400; path=/`;
         navigate("/");
         signupSuccess();
       } else {
@@ -87,8 +87,6 @@ const LoginPage = () => {
       password,
     };
     console.log(data);
-
-    document.cookie = `email=${email}; max-age=86400; path=/`;
     try {
       const response = await fetch('http://127.0.0.1:8000/login', {
         method: 'POST',
@@ -105,7 +103,6 @@ const LoginPage = () => {
         // Handle successful login response
         document.cookie = `username=${responseData.user.username}; max-age=86400; path=/`;
         document.cookie = `email=${responseData.user.email}; max-age=86400; path=/`;
-        document.cookie = `phone_num=${responseData.phone_num}; max-age=86400; path=/`;
         navigate("/");
         signinSuccess();
       } else {
