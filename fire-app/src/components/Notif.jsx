@@ -55,17 +55,17 @@ const Notif = () => {
   };
 
   const showToastIfNewNotification = (notification) => {
+    console.log(notification);
     const currentTime = new Date();
     const notificationTime = new Date(notification.timestamp);
-    const differenceInMinutes = (currentTime - notificationTime) / (1000 * 60);
-    if (
-      lastTimestamp &&
-      new Date(notification.timestamp) > new Date(lastTimestamp) &&
+    const lastTime = lastTimestamp > notificationTime ? lastTimestamp : notificationTime;
+    const differenceInMinutes = (currentTime - lastTime) / (1000 * 60);
+    if ( lastTime != lastTimestamp &&
       differenceInMinutes <= 1 &&
       !displayedNotifications.includes(notification._id) // Check if the notification ID is not in the displayedNotifications array
     ) {
-      toast.error("New notification received!", {
-        position: "bottom-center",
+      toast.error("Fire Alert Received!", {
+        position: "top-center",
         autoClose: 5000,
         hideProgressBar: false,
         closeOnClick: true,
