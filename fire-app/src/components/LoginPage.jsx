@@ -103,6 +103,7 @@ const LoginPage = () => {
         // Handle successful login response
         document.cookie = `username=${responseData.user.username}; max-age=86400; path=/`;
         document.cookie = `email=${responseData.user.email}; max-age=86400; path=/`;
+        document.cookie = `phone_num=${responseData.user.phone_num}; max-age=86400; path=/`;
         navigate("/");
         signinSuccess();
       } else {
