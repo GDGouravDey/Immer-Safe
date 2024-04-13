@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 import { google_auth } from '../assets/index';
 import { useNavigate } from 'react-router-dom';
 // import { useNotificationCenter } from "react-toastify/addons/use-notification-center";
-import { toast } from "react-toastify";
+import { toast, Zoom } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const LoginPage = () => {
@@ -19,19 +19,59 @@ const LoginPage = () => {
   // const { notifications, clear, markAllAsRead, markAsRead } = useNotificationCenter();
 
   const signinSuccess = () => {
-    toast.success('Successfully Signed In!');
+    toast.success('Successfully Signed In!', {
+      position: "bottom-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+      transition: Zoom,
+    });
   };
 
   const signinFailure = () => {
-    toast.error('Failed to Sign In!');
+    toast.error('Failed to Sign In!', {
+      position: "bottom-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      transition: Zoom,
+    });
   };
 
   const signupSuccess = () => {
-    toast.success('Successfully Registered New User!');
+    toast.success('Successfully Registered New User!', {
+      position: "bottom-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      transition: Zoom,
+    });
   };
 
   const signupFailure = () => {
-    toast.error('Failed to Register New User!');
+    toast.error('Failed to Register New User!', {
+      position: "bottom-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      transition: Zoom,
+    });
   };
 
   const handleToggle = () => {

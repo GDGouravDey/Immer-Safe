@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { close, menu } from '../assets';
 import immersafe from '../assets/immersafe.png';
-import { toast } from "react-toastify";
+import { toast , Zoom } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Navbar = () => {
@@ -21,7 +21,17 @@ const Navbar = () => {
   };
 
   const signout = () => {
-    toast.success('Logged Out Successfully!');
+    toast.success('Logged Out Successfully!', {
+      position: "bottom-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+      transition: Zoom,
+    });
   };
 
   useEffect(() => {

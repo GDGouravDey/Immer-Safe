@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import styles from "../style";
 import { robot } from "../assets";
-import { toast } from "react-toastify";
+import { toast , Zoom } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Notif = () => {
@@ -65,14 +65,17 @@ const Notif = () => {
       !displayedNotifications.includes(notification._id) // Check if the notification ID is not in the displayedNotifications array
     ) {
       toast.error("New notification received!", {
-        position: "top-center",
+        position: "bottom-center",
         autoClose: 5000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
+        theme: "colored",
+        transition: Zoom,
       });
+      
       setLastTimestamp(notification.timestamp); // Update the last timestamp to the timestamp of the new notification
       setDisplayedNotifications([...displayedNotifications, notification._id]); // Add the notification ID to the displayedNotifications array
     }
