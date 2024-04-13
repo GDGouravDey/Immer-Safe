@@ -35,6 +35,7 @@ import emergency from "./emergency.jpg";
 import immersafe from "./immersafe.png";
 import bullet from "./bullet.svg";
 import google_auth from "./google_auth.svg";
+import close_circle from "./close_circle.svg";
 
 export {
   airbnb,
@@ -74,4 +75,5 @@ export {
   immersafe,
   bullet,
   google_auth,
+  close_circle
 };

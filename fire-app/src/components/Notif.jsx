@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import styles from "../style";
 import { robot } from "../assets";
-import { toast , Zoom } from "react-toastify";
+import { toast, Zoom } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { close_circle } from "../assets";
 
 const Notif = () => {
   const [data, setData] = useState([]);
@@ -26,15 +27,16 @@ const Notif = () => {
         const itemPosition = item.getBoundingClientRect().top;
         const windowHeight = window.innerHeight;
         if (itemPosition < windowHeight * 0.8) {
-          item.classList.add("show"); // Add class to show notification
-        } else {
-          item.classList.remove("show"); // Remove class to hide notification
+          item.classList.add("show");
         }
+        // else {
+        //   item.classList.remove("show");
+        // }
       });
     };
-  
+
     window.addEventListener("scroll", handleScroll);
-  
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -60,7 +62,7 @@ const Notif = () => {
     const notificationTime = new Date(notification.timestamp);
     const lastTime = lastTimestamp > notificationTime ? lastTimestamp : notificationTime;
     const differenceInMinutes = (currentTime - lastTime) / (1000 * 60);
-    if ( lastTime != lastTimestamp &&
+    if (lastTime != lastTimestamp &&
       differenceInMinutes <= 1 &&
       !displayedNotifications.includes(notification._id) // Check if the notification ID is not in the displayedNotifications array
     ) {
@@ -75,7 +77,7 @@ const Notif = () => {
         theme: "colored",
         transition: Zoom,
       });
-      
+
       setLastTimestamp(notification.timestamp); // Update the last timestamp to the timestamp of the new notification
       setDisplayedNotifications([...displayedNotifications, notification._id]); // Add the notification ID to the displayedNotifications array
     }
@@ -122,27 +124,41 @@ const Notif = () => {
 
   // Modal component
   const NotificationModal = ({ notification, onClose }) => {
+    // Open modal with selected notification
+    useEffect(() => {
+      // Disable scrolling on the body when the modal is open
+      document.body.style.overflow = "hidden";
+
+      // Re-enable scrolling on the body when the modal is closed
+      return () => {
+        document.body.style.overflow = "unset";
+      };
+    }, []);
+
     return (
       <>
-        {/* Modal background */}
-        <div className="modal-background" onClick={onClose}></div>
-        {/* Modal content */}
+        <div className="modal-background" onClick={(e) => e.stopPropagation()}></div>
         <div className="modal">
-          <div className="modal-content">
-            {/* Content of your modal */}
-            <h2 className="text-xl font-bold">Sensor Data</h2>
+          <div className="modal-content relative">
+            <img
+              src={close_circle}
+              alt="Close"
+              className="absolute top-0 right-0 mt-2 mr-2 cursor-pointer w-10 h-10"
+              onClick={onClose}
+            />
+            <h2 className="font-bold">FIRE ALERT</h2>
             <p>A1: {notification["a1"]}</p>
             <p>D1: {notification["d1"]}</p>
             <p>A2: {notification["a2"]}</p>
             <p>D22: {notification["d22"]}</p>
             <p>Time: {convertToIST(notification["timestamp"])}</p>
             <p>Date: {convertDateToIST(notification["timestamp"])}</p>
-            <button onClick={onClose} className="close-button">×</button>
           </div>
         </div>
       </>
     );
   };
+
 
   return (
     <>
@@ -160,8 +176,8 @@ const Notif = () => {
               <div className="mt-4">
                 <div id="notificationContainer" className="notification-container">
                   {currentNotifications.map((notification, index) => (
-                    <div key={index} className="notification-item text-white p-5 rounded-[20px] shadow-lg mb-6 cursor-pointer" style={{ background: 'linear-gradient(160deg, #C62828 65%, #FF7733 100%)' }} onClick={() => openModal(notification)}>
-                      <h2 className="text-2xl font-bold font-poppins mb-2">Sensor Data</h2>
+                    <div key={index} className="notification-item text-white p-5 rounded-[20px] shadow-lg mb-6 cursor-pointer" style={{ background: 'linear-gradient(160deg, #E62828 65%, #FF8733 100%)' }} onClick={() => openModal(notification)}>
+                      <h2 className="text-2xl font-bold font-poppins mb-2">FIRE ALERT</h2>
                       <p className="text-xl font-poppins">A1: {notification["a1"]}</p>
                       <p className="text-xl font-poppins">D1: {notification["d1"]}</p>
                       <p className="text-xl font-poppins">A2: {notification["a2"]}</p>
@@ -177,7 +193,7 @@ const Notif = () => {
                 <ul className="pagination flex justify-center gap-4">
                   {Array.from({ length: Math.ceil(data.length / notificationsPerPage) }, (_, i) => (
                     <li key={i} className="page-item">
-                      <button onClick={() => paginate(i + 1)} className="bg-red-700 text-white font-bold font-poppins py-3 px-5 rounded-[10px]">
+                      <button onClick={() => paginate(i + 1)} className="bg-red-600 text-white font-bold font-poppins py-3 px-5 mx-2 rounded-[10px]">
                         {i + 1}
                       </button>
                     </li>
