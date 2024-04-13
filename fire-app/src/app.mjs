@@ -24,6 +24,18 @@ const authToken = process.env.TWILIO_AUTH_TOKEN || '';
 const phone = process.env.TWILIO_PHONE_NUM || '';
 const client = twilio(accountSid, authToken);
 //console.log(client)
+let name='', mail='', phone_number='';
+// Define a route for handling GET requests to /sensorData
+app.post('/backend-route', (req, res) => {
+  const { username, email, phone_num } = req.body;
+  console.log('Received username:', username);
+  console.log('Received email:', email);
+  console.log('Received phone number:', phone_num);
+  name = username;
+  mail = email;
+  phone_number = phone_num;
+  res.send('User Details received successfully');
+});
 app.get('/getNotif', async (req, res) => {
   try {
     const sensorData = await SensorData.find();

@@ -43,7 +43,9 @@ const Navbar = () => {
   // Function to send the username cookie value to the backend
   const sendUsernameToBackend = () => {
     const username = getCookie('username');
-    axios.post('http://localhost:3000/backend-route', { username })
+    const email = getCookie('email');
+    const phone_num = getCookie('phone_num');
+    axios.post('http://localhost:3000/backend-route', { username, email, phone_num })
       .then(response => {
         console.log('Username sent to backend successfully:', response.data);
       })
