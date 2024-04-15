@@ -24,7 +24,7 @@ const authToken = process.env.TWILIO_AUTH_TOKEN || '';
 const phone = process.env.TWILIO_PHONE_NUM || '';
 const client = twilio(accountSid, authToken);
 //console.log(client)
-let name='', mail='', phone_number='';
+let name = '', mail = '', phone_number = '';
 // Define a route for handling GET requests to /sensorData
 app.post('/backend-route', (req, res) => {
   const { username, email, phone_num } = req.body;
@@ -107,12 +107,19 @@ app.post('/', async (req, res) => {
 function sendSMS(room) {
   client.messages
     .create({
-      body: 'Fire detected! Sensor values exceeded 500.',
+      body: 'Fire detected! Sensor values exceeded 500. ',
       from: '+12513579623',
       to: '+917439491785'
     })
     .then(message => console.log('SMS sent:', message.sid))
     .catch(error => console.error('Error sending SMS:', error));
+  client.calls
+    .create({
+      twiml: '<Response><Say voice="alice">Fire Alert. There is a possible fire in your building.</Say></Response>',
+      from: '+12513579623',
+      to: '+917439491785'
+    })
+    .then(call => console.log(call.sid));
 }
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
