@@ -166,14 +166,14 @@ const Notif = () => {
         <div className={`flex-1 ${styles.flexStart} flex-col sm:px-16 px-6`}>
 
           <div className="flex flex-row justify-between items-center w-full">
-            <div className="flex-1 flex-col xl:px-0 sm:px-16 px-6">
+            <div className="flex-1 flex-col xl:px-0 px-2 sm:px-16">
               <div className="flex flex-row justify-between items-center w-full">
                 <h1 className="flex-1 font-poppins font-semibold ss:text-[72px] text-[45px] text-white ss:leading-[100.8px] leading-[75px] sm:mt-[-50px] md:mt-[-100px] lg:mt-[0px] mb-[10px] xl:mt-[-60px]">
                   <span className="text-gradient">Notifications</span>{" "}
                 </h1>
               </div>
 
-              <div className="mt-4">
+              <div className="mt-4 hidden sm:block">
                 <div id="notificationContainer" className="notification-container">
                   {currentNotifications.map((notification, index) => (
                     <div key={index} className="notification-item text-white p-5 rounded-[20px] shadow-lg mb-6 cursor-pointer" style={{ background: 'linear-gradient(160deg, #E62828 65%, #FF8733 100%)' }} onClick={() => openModal(notification)}>
@@ -189,6 +189,23 @@ const Notif = () => {
                   ))}
                 </div>
               </div>
+              <div className="mt-4 block sm:hidden">
+                <div id="notificationContainer" className="notification-container-phone">
+                  {currentNotifications.map((notification, index) => (
+                    <div key={index} className="notification-item text-white p-4 rounded-[20px] shadow-lg mb-6 cursor-pointer" style={{ width: '300px', background: 'linear-gradient(160deg, #E62828 65%, #FF8733 100%)' }} onClick={() => openModal(notification)}>
+                      <h2 className="text-2xl font-bold font-poppins mb-2">FIRE ALERT</h2>
+                      <p className="text-xl font-poppins">A1: {notification["a1"]}</p>
+                      <p className="text-xl font-poppins">D1: {notification["d1"]}</p>
+                      <p className="text-xl font-poppins">A2: {notification["a2"]}</p>
+                      <p className="text-xl font-poppins">D22: {notification["d22"]}</p>
+                      <p className="text-xl font-poppins">Time: {convertToIST(notification["timestamp"])}</p>
+                      <p className="text-xl font-poppins">Date: {convertDateToIST(notification["timestamp"])}</p>
+                      {showToastIfNewNotification(notification)}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
               <nav className="mt-10">
                 <ul className="pagination flex justify-center gap-4">
                   {Array.from({ length: Math.ceil(data.length / notificationsPerPage) }, (_, i) => (
