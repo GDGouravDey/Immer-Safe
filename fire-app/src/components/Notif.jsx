@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
 import styles from "../style";
-import { robot } from "../assets";
+import { fire_station, robot, close_circle } from "../assets";
 import { toast, Zoom } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { close_circle } from "../assets";
 
 const Notif = () => {
   const [data, setData] = useState([]);
@@ -12,6 +11,7 @@ const Notif = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedNotification, setSelectedNotification] = useState(null); // State for selected notification
   const notificationsPerPage = 5;
+  const time = 14;
 
   useEffect(() => {
     fetchData(); // Fetch data initially
@@ -143,16 +143,19 @@ const Notif = () => {
             <img
               src={close_circle}
               alt="Close"
-              className="absolute top-0 right-0 mt-2 mr-2 cursor-pointer w-10 h-10"
+              className="absolute top-0 right-0 sm:mt-2 sm:mr-2 cursor-pointer w-10 h-10"
               onClick={onClose}
             />
-            <h2 className="font-bold">FIRE ALERT</h2>
-            <p>A1: {notification["a1"]}</p>
-            <p>D1: {notification["d1"]}</p>
-            <p>A2: {notification["a2"]}</p>
-            <p>D22: {notification["d22"]}</p>
-            <p>Time: {convertToIST(notification["timestamp"])}</p>
-            <p>Date: {convertDateToIST(notification["timestamp"])}</p>
+            <h2 className="text-3xl font-bold mb-2">FIRE ALERT</h2>
+            <p><b>Place:</b> {notification["a1"] < 200 ? "Room 1" : "Room 2"}</p>
+            <p><b>Time:</b> {convertToIST(notification["timestamp"])}</p>
+            <p><b>Date:</b> {convertDateToIST(notification["timestamp"])}</p>
+            <p>Nearest Fire Station Details:</p>
+            <img src={fire_station} alt='Nearest Fire Station' className="my-2 rounded-[10px]" />
+            <p>Manicktala Fire Station</p>
+            <p><b>Address:</b> Bagmari Lane, Kankurgachi, Kolkata, West Bengal -  700054</p>
+            <p><b>Phone:</b> 033 2320 7489</p>
+            <p><b>Expected Arrival Time:</b> {time} minutes</p>
           </div>
         </div>
       </>
@@ -173,33 +176,29 @@ const Notif = () => {
                 </h1>
               </div>
 
-              <div className="mt-4 hidden sm:block">
+              <div className="mt-4 hidden xs:block">
                 <div id="notificationContainer" className="notification-container">
                   {currentNotifications.map((notification, index) => (
-                    <div key={index} className="notification-item text-white p-5 rounded-[20px] shadow-lg mb-6 cursor-pointer" style={{ background: 'linear-gradient(160deg, #E62828 65%, #FF8733 100%)' }} onClick={() => openModal(notification)}>
-                      <h2 className="text-2xl font-bold font-poppins mb-2">FIRE ALERT</h2>
-                      <p className="text-xl font-poppins">A1: {notification["a1"]}</p>
-                      <p className="text-xl font-poppins">D1: {notification["d1"]}</p>
-                      <p className="text-xl font-poppins">A2: {notification["a2"]}</p>
-                      <p className="text-xl font-poppins">D22: {notification["d22"]}</p>
-                      <p className="text-xl font-poppins">Time: {convertToIST(notification["timestamp"])}</p>
-                      <p className="text-xl font-poppins">Date: {convertDateToIST(notification["timestamp"])}</p>
+                    <div key={index} className="notification-item text-white p-7 rounded-[20px] shadow-lg mb-7 cursor-pointer" style={{ background: 'linear-gradient(160deg, #E72028 65%, #FF8733 100%)' }} onClick={() => openModal(notification)}>
+                      <h2 className="text-[1.6rem] font-bold font-poppins mb-2">{notification["a1"] < 200 ? "Fire detected in Room 1" : "Fire detected in Room 2"}</h2>
+                      <h3 className="text-[1.4rem] font-poppins mb-1">High Temperatures detected</h3>
+                      <p className="text-xl font-poppins mb-1"><b>Place:</b> {notification["a1"] < 200 ? "Room 1" : "Room 2"}</p>
+                      <p className="text-xl font-poppins mb-1"><b>Time:</b> {convertToIST(notification["timestamp"])}</p>
+                      <p className="text-xl font-poppins mb-1"><b>Date:</b> {convertDateToIST(notification["timestamp"])}</p>
                       {showToastIfNewNotification(notification)}
                     </div>
                   ))}
                 </div>
               </div>
-              <div className="mt-4 block sm:hidden">
+              <div className="mt-4 block xs:hidden">
                 <div id="notificationContainer" className="notification-container-phone">
                   {currentNotifications.map((notification, index) => (
-                    <div key={index} className="notification-item text-white p-4 rounded-[20px] shadow-lg mb-6 cursor-pointer" style={{ width: '300px', background: 'linear-gradient(160deg, #E62828 65%, #FF8733 100%)' }} onClick={() => openModal(notification)}>
-                      <h2 className="text-2xl font-bold font-poppins mb-2">FIRE ALERT</h2>
-                      <p className="text-xl font-poppins">A1: {notification["a1"]}</p>
-                      <p className="text-xl font-poppins">D1: {notification["d1"]}</p>
-                      <p className="text-xl font-poppins">A2: {notification["a2"]}</p>
-                      <p className="text-xl font-poppins">D22: {notification["d22"]}</p>
-                      <p className="text-xl font-poppins">Time: {convertToIST(notification["timestamp"])}</p>
-                      <p className="text-xl font-poppins">Date: {convertDateToIST(notification["timestamp"])}</p>
+                    <div key={index} className="notification-item text-white p-4 rounded-[20px] shadow-lg mb-6 cursor-pointer" style={{ width: '300px', background: 'linear-gradient(160deg, #E72028 65%, #FF8733 100%)' }} onClick={() => openModal(notification)}>
+                      <h2 className="text-[1.4rem] font-bold font-poppins mb-2">{notification["a1"] < 200 ? "Fire detected in Room 1" : "Fire detected in Room 2"}</h2>
+                      <h3 className="text-[1.2rem] font-poppins mb-1">High Temperature detected</h3>
+                      <p className="text-[1.2rem] font-poppins mb-1"><b>Place:</b> {notification["a1"] < 200 ? "Room 1" : "Room 2"}</p>
+                      <p className="text-[1.2rem] font-poppins mb-1"><b>Time:</b> {convertToIST(notification["timestamp"])}</p>
+                      <p className="text-[1.2rem] font-poppins mb-1"><b>Date:</b> {convertDateToIST(notification["timestamp"])}</p>
                       {showToastIfNewNotification(notification)}
                     </div>
                   ))}

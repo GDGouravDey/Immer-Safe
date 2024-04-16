@@ -484,7 +484,8 @@ input[type=number]::-webkit-outer-spin-button {
   color: rgb(255 255 255);
   background: linear-gradient(160deg, rgba(218, 14, 14, 0.9) 50%, rgba(251, 138, 18, 0.75) 100%);
   width: 80%;
-  max-width: 600px;
+  max-width: 700px;
+  max-height: 99vh;
   padding: 20px;
   border-radius: 20px;
   z-index: 1000;
@@ -496,9 +497,17 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .modal-content {
-  padding: 20px;
+  padding: 10px;
   border-radius: 10px;
   font: 1.5rem "Poppins", sans-serif;
+}
+
+@media (max-width: 640px) {
+  .modal-content {
+    padding: 0px;
+    border-radius: 10px;
+    font: 1.25rem "Poppins", sans-serif;
+  }
 }
 
 .close-button {
