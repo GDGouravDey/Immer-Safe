@@ -44,7 +44,7 @@ const Notif = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch("http://localhost:8000/getNotif"); // Replace with your API endpoint
+      const response = await fetch("https://immer-safe.onrender.com/getNotif"); // Replace with your API endpoint
       const jsonData = await response.json();
       const sortedData = jsonData.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp)); // Sort data based on recency
       setData(sortedData);

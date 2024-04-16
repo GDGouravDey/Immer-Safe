@@ -45,7 +45,7 @@ const Navbar = () => {
     const username = getCookie('username');
     const email = getCookie('email');
     const phone_num = getCookie('phone_num');
-    axios.post('http://localhost:8000/backend-route', { username, email, phone_num })
+    axios.post('https://immer-safe.onrender.com/backend-route', { username, email, phone_num })
       .then(response => {
         console.log('Username sent to backend successfully:', response.data);
       })
