@@ -37,6 +37,12 @@ import bullet from "./bullet.svg";
 import google_auth from "./google_auth.svg";
 import close_circle from "./close_circle.svg";
 import fire_station from "./fire_station.png";
+import Aishik from "./Aishik.jpeg";
+import Gourav from "./Gourav.jpeg";
+import Priyam from "./Priyam.jpeg";
+import Trisha from "./Trisha.jpeg";
+import Pritam from "./Pritam.jpeg";
+import Suman from "./Suman.jpeg";
 
 export {
   airbnb,
@@ -77,5 +83,11 @@ export {
   bullet,
   google_auth,
   close_circle,
-  fire_station
+  fire_station,
+  Aishik,
+  Gourav,
+  Priyam,
+  Trisha,
+  Pritam,
+  Suman
 };
