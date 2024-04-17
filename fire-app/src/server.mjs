@@ -7,8 +7,8 @@ import dotenv from 'dotenv';
 import express, { urlencoded, json } from 'express';
 import twilio from 'twilio';
 import SensorData from './models/sensor.mjs';
-const url = "https://fire-app-tau.vercel.app/"
-console.log(process.env.TWILIO_SID, process.env.TWILIO_AUTH_TOKEN, process.env.TWILIO_PHONE_NUM);
+// const url = "https://fire-app-tau.vercel.app/"
+const url = "http://localhost:8000/"
 const accountSid = process.env.TWILIO_SID || '';
 const authToken = process.env.TWILIO_AUTH_TOKEN || '';
 const phone = process.env.TWILIO_PHONE_NUM || '';
@@ -96,7 +96,7 @@ app.post('/', async (req, res) => {
       room_number = aoValue1 < 200 ? 1 : 2;
       const currentTime = new Date();
       // Send SMS if the room value is below 200 and the SMS hasn't been sent yet
-      if (room < 200 && (lastRoomNumber === null || room_number != lastRoomNumber || lastFireTime === null || currentTime - lastFireTime >= 60000)) {
+      if (room < 200 && (lastRoomNumber === null || room_number != lastRoomNumber || lastFireTime === null || currentTime - lastFireTime >= 10000)) {
         await sensorData.save();
         console.log('Sensor data saved successfully');
         res.status(200).send('Sensor data saved successfully');

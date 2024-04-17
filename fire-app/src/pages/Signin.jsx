@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from '../style';
-import { Navbar, Footer } from '../components';
+import { Navbar, Footer,Chatbot } from '../components';
 import LoginPage from '../components/LoginPage';
 const Signin = () => {
     return (
@@ -18,6 +18,7 @@ const Signin = () => {
             <div className={`bg-primary w-full ${styles.paddingX} ${styles.flexCenter} pt-10`}>
                 <div className={`${styles.boxWidth}`}>
                     <Footer />
+                    <Chatbot />
                 </div>
             </div>
         </>

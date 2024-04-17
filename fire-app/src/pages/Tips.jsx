@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../style";
-import { Navbar, HomeFire, ElectricFire, Emergency, Footer } from "../components";
+import { Navbar, HomeFire, ElectricFire, Emergency, Footer, Chatbot } from "../components";
 
 const Tips = () => (
   <div className="bg-primary w-full overflow-hidden">
@@ -19,6 +19,7 @@ const Tips = () => (
     <div className={`bg-primary w-full ${styles.paddingX} ${styles.flexCenter}`}>
         <div className={`${styles.boxWidth}`}>
           <Footer />
+          <Chatbot />
         </div>
       </div>
   </div>

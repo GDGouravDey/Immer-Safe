@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../style";
-import { Navbar, Notif, Footer } from "../components";
+import { Navbar, Notif, Footer, Chatbot } from "../components";
 
 const Notification = () => (
   <div className="bg-primary w-full overflow-hidden">
@@ -17,6 +17,7 @@ const Notification = () => (
     <div className={`bg-primary w-full ${styles.paddingX} ${styles.flexCenter}`}>
         <div className={`${styles.boxWidth}`}>
           <Footer />
+          <Chatbot />
         </div>
       </div>
   </div>

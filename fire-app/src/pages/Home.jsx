@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../style";
-import { Pic2, Features, Pic1, Footer, Navbar, Testimonials, Hero } from "../components";
+import { Pic2, Features, Pic1, Footer, Navbar, Testimonials, Hero, Chatbot } from "../components";
 
 const Home = () => (
   <div className="bg-primary w-full overflow-hidden">
@@ -23,6 +23,7 @@ const Home = () => (
         <Pic2 />
         <Testimonials />
         <Footer />
+        <Chatbot />
       </div>
     </div>
   </div>
