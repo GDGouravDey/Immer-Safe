@@ -62,14 +62,14 @@ app.post('/', async (req, res) => {
     console.log("the request is");
     console.log(req.body); // Log the request body directly
 
-    const requestData = req.body; // No need to parse req.body
+    const requestData = JSON.parse(req.body.data); // No need to parse req.body
     console.log(requestData);
 
     // Extract AO and DO values from the parsed data
-    const AO1 = requestData.data.AO1;
-    const DO1 = requestData.data.DO1;
-    const AO2 = requestData.data.AO2;
-    const DO2 = requestData.data.DO2;
+    const AO1 = requestData.AO1;
+    const DO1 = requestData.DO1;
+    const AO2 = requestData.AO2;
+    const DO2 = requestData.DO2;
     // Extract AO and DO values for Sensor 1
     const aoValue1 = parseInt(AO1);
     const doValue1 = parseInt(DO1);
