@@ -96,7 +96,7 @@ app.post('/', async (req, res) => {
       room_number = aoValue1 < 200 ? 1 : 2;
       const currentTime = new Date();
       // Send SMS if the room value is below 200 and the SMS hasn't been sent yet
-      if (room < 200 && (lastRoomNumber === null || room_number != lastRoomNumber || lastFireTime === null || currentTime - lastFireTime >= 60000)) {
+      if (room < 200 && (lastRoomNumber === null || room_number != lastRoomNumber || lastFireTime === null || currentTime - lastFireTime >= 10000)) {
         await sensorData.save();
         console.log('Sensor data saved successfully');
         res.status(200).send('Sensor data saved successfully');
