@@ -163,7 +163,8 @@ const LoginPage = () => {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
       </Helmet>
-      <div className={`bg-primary min-h-screen items-center justify-center container hidden sm:block`} style={{ fontFamily: 'Montserrat' }} ref={containerRef}>
+      <div className={`hidden sm:block`}>
+      <div className={`bg-primary items-center justify-center container max-h-[70vh]`} style={{ fontFamily: 'Montserrat' }} ref={containerRef}>
         <div className={`mx-auto max-w-sm overflow-hidden rounded-md form-container ${isSignUp ? 'sign-up' : 'sign-in'}`} >
           <form className={`p-6 form`}>
             <h1 className={`text-3xl mb-6 heading`} style={{ fontWeight: 700 }}>{isSignUp ? 'Create Account' : 'Sign In'}</h1>
@@ -198,6 +199,7 @@ const LoginPage = () => {
             </div>
           </div>
         </div>
+      </div>
       </div>
       <div className={`bg-primary min-h-screen flex items-center justify-center container2 max-w-[80%] xs:max-w-[50%] sm:hidden`} style={{ fontFamily: 'Montserrat' }}>
         <div className={`mx-auto max-w-sm overflow-hidden rounded-md form-container ${isSignUp ? 'sign-up-mob' : 'sign-in-mob'}`} >
