@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import styles from '../style';
-import { Navbar, Footer } from '../components';
+import { Navbar, Footer, Chatbot } from '../components';
 import { Priyam, Gourav, Aishik, Trisha, Pritam, Suman } from '../assets';
 import animationData from '../Animation.json';
 import lottie from 'lottie-web';
@@ -107,6 +107,7 @@ const About = () => {
       <div className={`w-full ${styles.paddingX} ${styles.flexCenter}`}>
         <div className={`${styles.boxWidth}`}>
           <Footer />
+          <Chatbot />
         </div>
       </div>
     </div >

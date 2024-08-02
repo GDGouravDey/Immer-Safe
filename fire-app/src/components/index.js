@@ -9,6 +9,7 @@ import Notif from "./Notif";
 import HomeFire from "./HomeFire";
 import ElectricFire from "./ElectricFire";
 import Emergency from "./Emergency";
+import Chatbot from "./Chatbot";
 
 export {
   Navbar,
@@ -22,4 +23,5 @@ export {
   HomeFire,
   ElectricFire,
   Emergency,
+  Chatbot
 };
