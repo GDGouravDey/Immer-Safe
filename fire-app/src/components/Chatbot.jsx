@@ -11,7 +11,6 @@ const Chatbot = () => {
     const [isVisible, setIsVisible] = useState(false); // State to manage visibility
     const chatInputRef = useRef(null);
 
-    // const genAI = new GoogleGenerativeAI("AIzaSyCKPTjmQE-mgGz0cFIjIFgicxqqgsorVf8");
     const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY);
 
     const handleInputChange = (event) => {
