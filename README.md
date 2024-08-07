@@ -30,3 +30,22 @@ cd fire-app
 npm i (Exclude this Step if node_modules is already downloaded)
 npm start
 ```
+
+## Testing Fire Alert
+This project is dependent on a functioning hardware model with Arduino and ESP32. In absence of these, the website can be tested as :-
+> Send a POST request as JSON to ```http://localhost:8000``` (For Local Server) or ```https://fire-app-tau.vercel.app/``` (For Deployed Server)
+
+Example contents of Test JSON :-
+```
+{
+  "data": {
+    "AO1": "100",
+    "DO1": "1",
+    "AO2": "210",
+    "DO2": "0"
+  }
+}
+```
+> AO1 and AO2 represent Fire Sensor values. Any value less than 200 implies Fire in the Room.
+
+
