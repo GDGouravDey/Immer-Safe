@@ -62,7 +62,7 @@ app.post('/', async (req, res) => {
     console.log("the request is");
     console.log(req.body); // Log the request body directly
 
-    const requestData = JSON.parse(req.body.data); // No need to parse req.body
+    const requestData = req.body.data;
     console.log(requestData);
 
     // Extract AO and DO values from the parsed data
@@ -116,27 +116,40 @@ app.post('/', async (req, res) => {
 });
 
 
-// Start the server
 function sendSMS(room) {
-  client.messages
-    .create({
-      body: `Fire detected! Sensor values exceeded 500. Click on ${url}`,
-      from: '+12513579623',
-      to: '+917439491785'
-    })
-    .then(message => console.log('SMS sent:', message.sid))
-    .catch(error => console.error('Error sending SMS:', error));
+  try {
+    client.messages
+      .create({
+        body: `Fire detected! Sensor values have detected a fire in the room. Click on ${url}`,
+        from: phone,
+        to: '+917439491785'
+      })
+      .then(message => console.log('SMS sent:', message.sid))
+      .catch(error => {
+        console.error('Error sending SMS:', error);
+      });
+  } catch (error) {
+    console.error('Unexpected error in sendSMS:', error);
+  }
 }
 
 function sendCall(room) {
-  client.calls
-    .create({
-      twiml: '<Response><Say voice="alice">Fire Alert. There is a possible fire in your building.</Say></Response>',
-      from: '+12513579623',
-      to: '+917439491785'
-    })
-    .then(call => console.log(call.sid));
+  try {
+    client.calls
+      .create({
+        twiml: '<Response><Say voice="alice">Fire Alert. There is a possible fire in your building. Fire Alert. There is a possible fire in your building.</Say></Response>',
+        from: phone,
+        to: '+917439491785'
+      })
+      .then(call => console.log('Call initiated:', call.sid))
+      .catch(error => {
+        console.error('Error initiating call:', error);
+      });
+  } catch (error) {
+    console.error('Unexpected error in sendCall:', error);
+  }
 }
+
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
