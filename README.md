@@ -2,7 +2,7 @@
 
 ## Overview :-
 
-The Fire Safety System is a fully-responsive web application designed using the MERN stack (MongoDB, Express.js, React.js, Node.js) to ensure the safety of users by monitoring fire hazards and providing timely alerts. This system integrates advanced fire sensor monitoring technology to detect potential fire incidents and deliver immediate notifications to users, enhancing safety measures.
+Immer Safe is a fully-responsive web application designed using the MERN stack (MongoDB, Express.js, React.js, Node.js) to ensure the safety of users by monitoring fire hazards and providing timely alerts. This system integrates advanced fire sensor monitoring technology to detect potential fire incidents and deliver immediate notifications to users, enhancing safety measures.
 
 
 
