@@ -204,7 +204,7 @@ const LoginPage = () => {
       <div className={`bg-primary min-h-screen flex items-center justify-center container2 max-w-[80%] xs:max-w-[50%] sm:hidden`} style={{ fontFamily: 'Montserrat' }}>
         <div className={`mx-auto max-w-sm overflow-hidden rounded-md form-container ${isSignUp ? 'sign-up-mob' : 'sign-in-mob'}`} >
           <form className={`p-6 form flex flex-col items-center`}>
-            <h1 className={`text-3xl mb-6 heading`} style={{ fontWeight: 700 }}>{isSignUp ? 'Sign Up' : 'Sign In'}</h1>
+            <h1 className={`text-3xl mb-5 mt-3 heading`} style={{ fontWeight: 700 }}>{isSignUp ? 'Sign Up' : 'Sign In'}</h1>
             <div className={`mb-2 socialIcons`}>
               <img src={google_auth} alt="Google" className="relative h-[94%] z-[5]" />
             </div>
@@ -223,7 +223,7 @@ const LoginPage = () => {
               <>
                 <a href="#" className={`text-xs text-gray-600 block mb-2 z-10 forgotPassword`}>Forgot Your Password?</a>
                 <button className={`btn-primary signInButton z-10`} type="submit" id="signin_mob" onClick={handleSignIn}>Sign In</button>
-                <a href="#" className={`text-xs text-gray-600 block mb-2 forgotPassword`} onClick={handleToggle}>Not having Account? Sign Up</a>
+                <a href="#" className={`text-xs text-gray-600 block z-10 mb-2 forgotPassword`} onClick={handleToggle}>Not having Account? Sign Up</a>
               </>
             )}
           </form>

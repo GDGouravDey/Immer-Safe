@@ -134,7 +134,6 @@ const Navbar = () => {
                 <li className={`font-poppins font-normal cursor-pointer text-[18px] text-white mr-10 mb-1.5 ${location.pathname === "/notifications" && "active"}`}>
                   <Link to="/notifications">Notifications</Link>
                 </li>
-                {/* Add other navigation links */}
               </>
             )}
             <li className={`font-poppins font-normal cursor-pointer text-[18px] text-white mr-10 mb-1.5 ${location.pathname === "/tips" && "active"}`}>
