@@ -12,6 +12,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@google/genai": "^1.0.0",
     "@google/generative-ai": "^0.16.0",
     "axios": "^1.6.8",
     "bcryptjs": "^2.4.3",

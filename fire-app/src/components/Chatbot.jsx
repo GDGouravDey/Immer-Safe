@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { GoogleGenerativeAI } from "@google/generative-ai";
+import { GoogleGenAI } from "@google/genai";
 import '../Chatbot.css';
 import { close_circle } from '../assets';
 
@@ -11,7 +11,8 @@ const Chatbot = () => {
     const [isVisible, setIsVisible] = useState(false); // State to manage visibility
     const chatInputRef = useRef(null);
 
-    const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY);
+    const gemini_api_key = import.meta.env.VITE_GEMINI_API_KEY;
+    const genAI = new GoogleGenAI({ apiKey: gemini_api_key });
 
     const handleInputChange = (event) => {
         setUserMessage(event.target.value);
@@ -52,10 +53,10 @@ const Chatbot = () => {
         const userprompt = message;
         const prompt = `YOU HELP GIVE FIRE SAFETY AND MISCELLANEOUS SAFETY TIPS TO PEOPLE. GIVE SHORT, CRISP AND TO THE POINT ANSWER AND MAKE SURE IT IS EASY TO UNDERSTAND. REMEMBER THE ANSWERS TO BE HELPFUL FOR INDIAN LOCATION. DO NOT INCLUDE SPECIAL SYMBOLS LIKE '*', GIVE POINTS USING NUMBERINGS. GIVE ANSWER TO THIS QUESTION: ${userprompt}`;
         console.log(prompt);
-        const result = await genAI.getGenerativeModel({ model: "gemini-pro" }).generateContent(prompt);
-        console.log(result);
+        const result = await genAI.models.generateContent({ model: "gemini-2.0-flash", contents: prompt });
+        console.log(result.text);
         // Extract the bot's response from the result
-        const botResponse = result.response.text() ?? 'Sorry, I could not understand that.';
+        const botResponse = result.text ?? 'Sorry, I could not understand that.';
         console.log(botResponse);
         const sanitizedResponse = botResponse.replace(/\*\*/g, '');
         console.log(sanitizedResponse);
