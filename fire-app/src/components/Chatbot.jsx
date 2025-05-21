@@ -54,10 +54,8 @@ const Chatbot = () => {
         const prompt = `YOU HELP GIVE FIRE SAFETY AND MISCELLANEOUS SAFETY TIPS TO PEOPLE. GIVE SHORT, CRISP AND TO THE POINT ANSWER AND MAKE SURE IT IS EASY TO UNDERSTAND. REMEMBER THE ANSWERS TO BE HELPFUL FOR INDIAN LOCATION. DO NOT INCLUDE SPECIAL SYMBOLS LIKE '*', GIVE POINTS USING NUMBERINGS. GIVE ANSWER TO THIS QUESTION: ${userprompt}`;
         console.log(prompt);
         const result = await genAI.models.generateContent({ model: "gemini-2.0-flash", contents: prompt });
-        console.log(result.text);
         // Extract the bot's response from the result
         const botResponse = result.text ?? 'Sorry, I could not understand that.';
-        console.log(botResponse);
         const sanitizedResponse = botResponse.replace(/\*\*/g, '');
         console.log(sanitizedResponse);
 
