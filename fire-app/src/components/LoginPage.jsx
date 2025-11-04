@@ -89,7 +89,6 @@ const LoginPage = () => {
       password,
       phone_num,
     };
-    console.log(data);
     try {
       const response = await fetch('https://immer-safe.onrender.com/register', {
         method: 'POST',
@@ -102,7 +101,6 @@ const LoginPage = () => {
       if (response.ok) {
         console.log("Successful Registration");
         const responseData = await response.json();
-        console.log(responseData);
         // Handle successful registration response
         document.cookie = `username=${responseData.user.username}; max-age=86400; path=/`;
         document.cookie = `email=${responseData.user.email}; max-age=86400; path=/`;
@@ -126,7 +124,6 @@ const LoginPage = () => {
       email,
       password,
     };
-    console.log(data);
     try {
       const response = await fetch('https://immer-safe.onrender.com/login', {
         method: 'POST',
@@ -138,8 +135,6 @@ const LoginPage = () => {
 
       if (response.ok) {
         const responseData = await response.json();
-        console.log("response data is")
-        console.log(responseData.user.phone_num);
         // Handle successful login response
         document.cookie = `username=${responseData.user.username}; max-age=86400; path=/`;
         document.cookie = `email=${responseData.user.email}; max-age=86400; path=/`;
