@@ -85,11 +85,11 @@ void loop() {
     server.handleClient();
    if (flame_state_2 == HIGH)
    {
-    Serial.println("No flame dected => The fire is NOT detected and the state is ");
+    Serial.println("No flame detected => The fire is NOT detected and the state is ");
     Serial.println(flame_state_2);
    }
   else{
-    Serial.println("Flame dected => The fire is detected");
+    Serial.println("Flame detected => The fire is detected");
     Serial.println(flame_state_2);
   }
   Serial.print("The AO value: ");
@@ -149,10 +149,7 @@ String getHTML() {
   htmlcode += "}," + String(interval) + ");\n";
     // Function to send data to the server
   htmlcode += "function sendDataToServer(data) {\n";
-  htmlcode += "  const url = 'https://immer-safe.onrender.com';\n"; // Replace with your backend server URL
-// htmlcode += "  const params = 'infrared_value=' + encodeURIComponent(data) + '&ao_pin=' + String(infrared_value) + '&do_pin=' + String(digitalRead(DO_PIN)) + ';\n";
-// URL encode the data
- // Adjust the field name according to your backend
+  htmlcode += "  const url = 'https://immer-safe.onrender.com/sensor';\n"; // Replace with your backend server URL
  htmlcode += "  const jsonData = JSON.stringify({ data });\n";
   htmlcode += "  fetch(url, {\n";
   htmlcode += "    method: 'POST',\n";

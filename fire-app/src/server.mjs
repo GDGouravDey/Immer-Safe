@@ -56,7 +56,7 @@ app.get('/getNotif', async (req, res) => {
     res.status(500).send('Internal server error');
   }
 });
-app.post('/', async (req, res) => {
+app.post('/sensor', async (req, res) => {
   try {
     console.log("the request is");
     console.log(req.body); // Log the request body directly
@@ -94,6 +94,7 @@ app.post('/', async (req, res) => {
       room = aoValue1 < 200 ? aoValue1 : aoValue2;
       room_number = aoValue1 < 200 ? 1 : 2;
       const currentTime = new Date();
+      
       // Send SMS if the room value is below 200 and the SMS hasn't been sent yet
       if (room < 200 && (lastRoomNumber === null || room_number != lastRoomNumber || lastFireTime === null || currentTime - lastFireTime >= 10000)) {
         await sensorData.save();
