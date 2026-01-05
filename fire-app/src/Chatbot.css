@@ -120,3 +120,28 @@
     background-color: #724ae8; /* Set the color of bot messages to red */
     color: #fff;
 }
+
+.chatbot .chatbox .chat.bot > div {
+    background-color: #724ae8;
+    color: #fff;
+}
+
+.chatbot .chatbox .chat > div ol {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+    list-style-type: decimal;
+}
+
+.chatbot .chatbox .chat > div ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+    list-style-type: disc;
+}
+
+.chatbot .chatbox .chat > div li {
+    margin-bottom: 0.5rem;
+}
+
+.chatbot .chatbox .chat > div li:last-child {
+    margin-bottom: 0;
+}

@@ -12,6 +12,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@google/genai": "^1.0.0",
     "@google/generative-ai": "^0.16.0",
     "axios": "^1.6.8",
     "bcryptjs": "^2.4.3",
@@ -29,6 +30,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
+    "react-markdown": "^10.1.0",
     "react-router-dom": "^6.22.1",
     "react-toastify": "^10.0.5",
     "session": "^0.1.0",

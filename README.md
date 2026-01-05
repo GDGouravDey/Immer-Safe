@@ -32,6 +32,14 @@ npm start
 ```
 
 ## Testing Fire Alert
+
+Use the following test account to sign in (for testing only):
+
+```
+Email: gdgouravdey@gmail.com
+Password: 12345678
+```
+
 This project is dependent on a functioning hardware model with Arduino and ESP32. In absence of these, the website can be tested as :-
 > Send a POST request as JSON to ```http://localhost:8000``` (For Local Server) or ```https://fire-app-tau.vercel.app/``` (For Deployed Server)
 

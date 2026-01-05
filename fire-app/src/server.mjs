@@ -7,7 +7,6 @@ import dotenv from 'dotenv';
 import express, { urlencoded, json } from 'express';
 import twilio from 'twilio';
 import SensorData from './models/sensor.mjs';
-// const url = "https://fire-app-tau.vercel.app/"
 const url = "http://localhost:8000/"
 const accountSid = process.env.TWILIO_SID || '';
 const authToken = process.env.TWILIO_AUTH_TOKEN || '';
