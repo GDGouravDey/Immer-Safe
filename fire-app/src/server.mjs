@@ -32,6 +32,13 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.static("public"))
 app.use(cookieParser())
 
+app.get('/health', (req, res) => {
+  res.status(200).json({
+    status: 'UP',
+    message: 'Server is healthy',
+    timestamp: new Date().toISOString()
+  });
+});
 
 app.use('/', loginrouter);
 app.use('/', registerrouter);
